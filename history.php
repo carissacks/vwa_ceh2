@@ -1,26 +1,25 @@
-    
-    <?php include "header.php"?>
-
 <?php 
+    include "functions.php";
+    include "connect_db.php";
+    include "header.php";
 
-    if(ISSET($_GET["id"])){
-        $id = $_GET["id"];
-    }else {
+    $id= getId($conn);
+
+    // if(ISSET($_GET["id"])){
+    //     $id = $_GET["id"];
+    // }else {
+    //     header("Location: http://localhost/vwa_ceh2");
+    // }
+    if($id==0){
         header("Location: http://localhost/vwa_ceh2");
     }
 
 ?>
 
-<div class="super_container">
-
-    <!-- Header -->
-    <?php include "header.php" ?>
-
     <div class="container single_product_container">
         
         
             <?php
-                include "connect_db.php";
                 $sql = "SELECT idHistory, u.full_name, p.product_name FROM history h 
                         JOIN product p ON h.idProduct = p.idProduct 
                         JOIN user u ON h.idUser = u.idUser

