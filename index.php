@@ -19,7 +19,10 @@
 	<div class="super_container"> -->
 
 		<!-- Header -->
-		<?php include "header.php" ?>
+		<?php 
+			include "header.php";
+			include "connect_db.php";
+		?>
 
 		<!-- Slider -->
 
@@ -58,13 +61,28 @@
 						</form>
 					</div>
 				</div>
+				<?php
+					if(isset($_COOKIE["sid"])) {
+						echo '<div class="card"><div class="card-header">Balance Account</div><div class="card-body">';
+						echo '<blockquote class="blockquote mb-0"><p class="text-center">';
+						$sid = base64_decode(base64_decode($_COOKIE["sid"]));
+						$array = explode(';',$sid, 3);
+						$username = $array[1];
 
+						$sql = "SELECT user_balance FROM user WHERE username = '$username'";
+						$balance = $conn->query($sql);
+						foreach($balance as $row){
+							$balance = $row["user_balance"];
+						}
+						echo "Your Balance is : " . $balance;
+						echo '</p></blockquote></div></div>';
+					}
+				?>
 				<div class="row">
 					<div class="col">
 						<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
 
 							<?php
-							include "connect_db.php";
 
 							$query = "SELECT * FROM product";
 							$products = $conn->query($query);
