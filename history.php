@@ -1,8 +1,11 @@
-<!-- css -->
-<?php include "css.php" ?>
-<!-- JS -->
-<?php include "js.php" ?>
+    
+    <?php include "header.php"?>
 
+<<<<<<< HEAD
+        <div class="container single_product_container">
+            History
+        </div>
+=======
 <?php 
 
     if(ISSET($_GET["id"])){
@@ -54,8 +57,7 @@
             ?>
         
     </div>
+>>>>>>> f2b7d6d3384a608909da15eef91cc975edb00870
 
     <!-- Footer -->
     <?php include "footer.php" ?>
-
-</div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -107,11 +107,9 @@
 	?>
 	<div class="super_container">
 
-		<!-- Header -->
 
 		<header class="header trans_300">
 
-			<!-- Main Navigation -->
 
 			<div class="main_nav_container">
 				<div class="container">
@@ -141,7 +139,6 @@
 
 		<div class="fs_menu_overlay"></div>
 
-		<!-- Hamburger Menu -->
 
 		<div class="hamburger_menu">
 			<div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
@@ -155,7 +152,9 @@
 					<li class="menu_item"><a href="#">contact</a></li>
 				</ul>
 			</div>
-		</div>
+		</div> -->
+
+		<?php include "header.php" ?>
 
 		<div class="container single_product_container">
 			<div class="row">
@@ -397,8 +396,9 @@
 		</div>
 
 		<!-- Footer -->
+		<?php include "footer.php" ?>
 
-		<footer class="footer">
+		<!-- <footer class="footer">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
@@ -522,4 +522,4 @@
 	
 </body>
 
-</html>
+</html> -->
