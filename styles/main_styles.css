@@ -284,172 +284,6 @@ section
 }
 
 /*********************************
-3.1 Currency
-*********************************/
-
-.currency
-{
-	display: inline-block;
-	position: relative;
-	min-width: 50px;
-	border-right: solid 1px #33333b;
-	padding-right: 20px;
-	padding-left: 20px;
-	text-align: center;
-	vertical-align: middle;
-	background: #1e1e27;
-}
-.currency > a
-{
-	display: block;
-	color: #b5aec4;
-	font-weight: 400;
-	height: 50px;
-	line-height: 50px;
-	font-size: 13px;
-	text-transform: uppercase;
-}
-.currency > a > i
-{
-	margin-left: 8px;
-}
-.currency:hover .currency_selection
-{
-	visibility: visible;
-	opacity: 1;
-	top: 100%;
-}
-.currency_selection
-{
-	display: block;
-	position: absolute;
-	right: 0;
-	top: 120%;
-	margin: 0;
-	width: 100%;
-	background: #FFFFFF;
-	visibility: hidden;
-	opacity: 0;
-	z-index: 1;
-	box-shadow: 0 0 25px rgba(63, 78, 100, 0.15);
-	-webkit-transition: opacity 0.3s ease;
-	-moz-transition: opacity 0.3s ease;
-	-ms-transition: opacity 0.3s ease;
-	-o-transition: opacity 0.3s ease;
-	transition: all 0.3s ease;
-}
-.currency_selection li
-{
-	padding-left: 10px;
-	padding-right: 10px;
-	line-height: 50px;
-}
-.currency_selection li a
-{
-	display: block;
-	color: #232530;
-	border-bottom: solid 1px #dddddd;
-	font-size: 13px;
-	text-transform: uppercase;
-	-webkit-transition: opacity 0.3s ease;
-	-moz-transition: opacity 0.3s ease;
-	-ms-transition: opacity 0.3s ease;
-	-o-transition: opacity 0.3s ease;
-	transition: all 0.3s ease;
-}
-.currency_selection li a:hover
-{
-	color: #b5aec4;
-}
-.currency_selection li:last-child a
-{
-	border-bottom: none;
-}
-
-/*********************************
-3.3 Account
-*********************************/
-
-.account
-{
-	display: inline-block;
-	position: relative;
-	min-width: 50px;
-	padding-left: 20px;
-	text-align: center;
-	vertical-align: middle;
-	background: #1e1e27;
-}
-.account > a
-{
-	display: block;
-	color: #b5aec4;
-	font-weight: 400;
-	height: 50px;
-	line-height: 50px;
-	font-size: 13px;
-}
-.account > a > i
-{
-	margin-left: 8px;
-}
-.account:hover .account_selection
-{
-	visibility: visible;
-	opacity: 1;
-	top: 100%;
-}
-.account_selection
-{
-	display: block;
-	position: absolute;
-	right: 0;
-	top: 120%;
-	margin: 0;
-	width: 100%;
-	background: #FFFFFF;
-	visibility: hidden;
-	opacity: 0;
-	z-index: 1;
-	box-shadow: 0 0 25px rgba(63, 78, 100, 0.15);
-	-webkit-transition: opacity 0.3s ease;
-	-moz-transition: opacity 0.3s ease;
-	-ms-transition: opacity 0.3s ease;
-	-o-transition: opacity 0.3s ease;
-	transition: all 0.3s ease;
-}
-.account_selection li
-{
-	padding-left: 10px;
-	padding-right: 10px;
-	line-height: 50px;
-}
-.account_selection li a
-{
-	display: block;
-	color: #232530;
-	border-bottom: solid 1px #dddddd;
-	font-size: 14px;
-	-webkit-transition: all 0.3s ease;
-	-moz-transition: all 0.3s ease;
-	-ms-transition: all 0.3s ease;
-	-o-transition: all 0.3s ease;
-	transition: all 0.3s ease;
-}
-.account_selection li a:hover
-{
-	color: #b5aec4;
-}
-.account_selection li:last-child a
-{
-	border-bottom: none;
-}
-.account_selection li a i
-{
-	margin-right: 10px;
-}
-
-/*********************************
 3.4 Main Navigation
 *********************************/
 
@@ -1015,7 +849,7 @@ section
 {
 	right: 15px;
 }
-.add_to_cart_button
+.detail_button
 {
 	width: 100%;
 	visibility: hidden;
@@ -1026,12 +860,12 @@ section
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
-.add_to_cart_button a
+.detail_button a
 {
 	font-size: 12px;
 	font-weight: 600;
 }
-.product-item:hover .add_to_cart_button
+.product-item:hover .detail_button
 {
 	visibility: visible;
 	opacity: 1;
@@ -1274,7 +1108,6 @@ section
 
 .add_to_cart_button {
 	width: 160px;
-	margin-left: 19px;
 	font-size: 12px !important;
 }
 
@@ -1591,13 +1424,18 @@ section
 }
 
 /*********************************
-10. Newsletter
+10. Search
 *********************************/
+
+.search_box{
+	background-color: #f2f2f2;
+}
 
 .search_form
 {
 	height: 120px;
-}
+}	
+
 #search_item
 {
 	width: 300px;

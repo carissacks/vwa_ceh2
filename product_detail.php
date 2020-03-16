@@ -39,13 +39,8 @@
 								<ul class="navbar_menu">
 									<li><a href="index.html">home</a></li>
 									<li><a href="#">shop</a></li>
-									<li><a href="#">promotion</a></li>
-									<li><a href="#">pages</a></li>
-									<li><a href="#">blog</a></li>
-									<li><a href="contact.html">contact</a></li>
 								</ul>
 								<ul class="navbar_user">
-									<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
 									<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
 								</ul>
 								<div class="hamburger_container">
@@ -131,8 +126,7 @@
 						<div class="free_delivery d-flex flex-row align-items-center justify-content-center">
 							<span class="ti-truck"></span><span>free delivery</span>
 						</div>
-						<div class="original_price">$629.99</div>
-						<div class="product_price">$495.00</div>
+						<div class="product_price mt-4">$495.00</div>
 						<ul class="star_rating">
 							<li><i class="fa fa-star" aria-hidden="true"></i></li>
 							<li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -140,24 +134,8 @@
 							<li><i class="fa fa-star" aria-hidden="true"></i></li>
 							<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
 						</ul>
-						<div class="product_color">
-							<span>Select Color:</span>
-							<ul>
-								<li style="background: #e54e5d"></li>
-								<li style="background: #252525"></li>
-								<li style="background: #60b3f3"></li>
-							</ul>
-						</div>
 						<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
-							<span>Quantity:</span>
-							<div class="quantity_selector">
-								<span class="minus"><i class="fa fa-minus" aria-hidden="true"></i></span>
-								<span id="quantity_value">1</span>
-								<span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
-							</div>
 							<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-							<div class="product_favorite d-flex flex-column align-items-center justify-content-center">
-							</div>
 						</div>
 					</div>
 				</div>
@@ -176,8 +154,7 @@
 							<ul
 								class="tabs d-flex flex-sm-row flex-column align-items-left align-items-md-center justify-content-center">
 								<li class="tab active" data-active-tab="tab_1"><span>Description</span></li>
-								<li class="tab" data-active-tab="tab_2"><span>Additional Information</span></li>
-								<li class="tab" data-active-tab="tab_3"><span>Reviews (2)</span></li>
+								<li class="tab" data-active-tab="tab_3"><span>Reviews</span></li>
 							</ul>
 						</div>
 					</div>
@@ -188,37 +165,11 @@
 						<!-- Tab Description -->
 
 						<div id="tab_1" class="tab_container active">
-							<div class="row">
-								<div class="col-lg-5 desc_col">
-									<div class="tab_title">
-										<h4>Description</h4>
-									</div>
-									<div class="tab_text_block">
-										<h2>Pocket cotton sweatshirt</h2>
-										<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud
-											felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
-									</div>
-									<div class="tab_image">
-										<img src="images/desc_1.jpg" alt="">
-									</div>
-									<div class="tab_text_block">
-										<h2>Pocket cotton sweatshirt</h2>
-										<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud
-											felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
-									</div>
-								</div>
-								<div class="col-lg-5 offset-lg-2 desc_col">
-									<div class="tab_image">
-										<img src="images/desc_2.jpg" alt="">
-									</div>
-									<div class="tab_text_block">
-										<h2>Pocket cotton sweatshirt</h2>
-										<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud
-											felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
-									</div>
-									<div class="tab_image desc_last">
-										<img src="images/desc_3.jpg" alt="">
-									</div>
+							<div class="row justify-content-center">
+								<div class="col-10">
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec facilisis ultricies justo, non vulputate ex feugiat porta. Nulla malesuada nisi in mi elementum, a congue urna congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer a aliquet ipsum. Praesent ut arcu non quam facilisis eleifend et ornare orci. Vivamus rhoncus diam at massa bibendum, ac condimentum diam vehicula. Aenean enim ipsum, venenatis vel porta quis, gravida a massa. Vivamus consequat lacinia sapien, vel tempor lorem mollis ac. Quisque feugiat commodo venenatis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non urna at felis hendrerit vehicula. Duis feugiat dapibus tempor.
+									Nullam dapibus in erat ac elementum. Morbi laoreet sapien quam, nec faucibus ligula commodo vitae. Praesent lacus augue, placerat et felis quis, rutrum vehicula sem. Sed sagittis vitae orci ac blandit. Nullam at felis luctus libero pharetra varius. Aenean vel nisl consequat, sodales tellus non, lacinia risus. Mauris scelerisque eros vel odio fermentum cursus. Mauris sit amet sollicitudin arcu. Cras rutrum lorem sollicitudin erat mattis malesuada. Maecenas posuere magna sed hendrerit pretium. Duis pellentesque est sodales risus condimentum luctus. In sit amet blandit nunc.
+									</p>
 								</div>
 							</div>
 						</div>
@@ -240,13 +191,13 @@
 						<!-- Tab Reviews -->
 
 						<div id="tab_3" class="tab_container">
-							<div class="row">
+							<div class="row justify-content-center">
 
 								<!-- User Reviews -->
 
-								<div class="col-lg-6 reviews_col">
+								<div class="col-10 col-md-7 reviews_col">
 									<div class="tab_title reviews_title">
-										<h4>Reviews (2)</h4>
+										<h4>Reviews</h4>
 									</div>
 
 									<!-- User Review -->
@@ -298,7 +249,7 @@
 
 								<!-- Add Review -->
 
-								<div class="col-lg-6 add_review_col">
+								<div class="col-10 col-md-4 add_review_col">
 
 									<div class="add_review">
 										<form id="review_form" action="post">
