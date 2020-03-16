@@ -19,7 +19,10 @@
 	<div class="super_container"> -->
 
 		<!-- Header -->
-		<?php include "header.php" ?>
+		<?php 
+			include "header.php";
+			include "connect_db.php";
+		?>
 
 		<!-- Slider -->
 
@@ -58,34 +61,47 @@
 						</form>
 					</div>
 				</div>
+				<?php
+					if(isset($_COOKIE["SID"])) {
+						echo '<div class="card"><div class="card-header">Balance Account</div><div class="card-body">';
+						echo '<blockquote class="blockquote mb-0"><p class="text-center">';
+						$sid = base64_decode(base64_decode($_COOKIE["SID"]));
+						$array = explode(';',$sid, 3);
+						$username = $array[1];
 
+						$sql = "SELECT user_balance FROM user WHERE username = '$username'";
+						$balance = $conn->query($sql);
+						foreach($balance as $row){
+							$balance = $row["user_balance"];
+						}
+						echo "Your Balance is : " . $balance;
+						echo '</p></blockquote></div></div>';
+					}
+				?>
 				<div class="row">
 					<div class="col">
 						<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
 
 							<?php
-							include "connect_db.php";
 
 							$query = "SELECT * FROM product";
 							$products = $conn->query($query);
 
 							foreach ($products as $product) {
-								echo "<div class='product-item men'>";
+								echo "<div class='product-item'>";
 								echo "<div class='product'>";
 								echo "<div class='product_image'>";
 								echo "<img src='images/products/$product[product_image]' alt=''>";
 								echo "</div>";
-								echo "<div class='favorite favorite_left'></div>";
 								echo "<div class='product_info'>";
-								echo "<h6 class='product_name'><a href='product_detail.php'>$product[product_name]</a></h6>";
+								echo "<h6 class='product_name'><a href='product_detail.php?idProduct=$product[idProduct]'>$product[product_name]</a></h6>";
 								echo "<div class='product_price'>$$product[product_price].00</div>";
 								echo "</div>";
 								echo "</div>";
-								echo "<div class='red_button detail_button'><a href='product_detail.php'>See Details</a></div>";
+								echo "<div class='red_button detail_button'><a href='product_detail.php?idProduct=$product[idProduct]'>See Details</a></div>";
 								echo "</div>";
 							}
 							?>
-
 						</div>
 					</div>
 				</div>

@@ -182,7 +182,7 @@
 							<div class="col-lg-12 image_col order-lg-2 order-1">
 								<div class="single_product_image">
 									<div class="single_product_image_background"
-										style="background-image:url(images/<?php echo $productImage; ?>)"></div>
+										style="background-image:url(images/products/<?php echo $productImage; ?>)"></div>
 								</div>
 							</div>
 						</div>
@@ -327,7 +327,7 @@
 												<h1>Add Review</h1>
 											</div>
 											<div>
-												<textarea id="review_message" class="input_review" name="reviewerMessage"
+												<textarea id="reviewerMessage" class="input_review" name="reviewerMessage"
 													placeholder="Your Review" rows="4" required
 													data-error="Please, leave us a review."></textarea>
 											</div>
