@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -104,6 +104,9 @@
 			$productPrice = "-";
 		}
 		
+		$query = "SELECT User.full_name AS FullName, Review.comment AS ReviewerComment FROM comment AS Review WHERE idProduct = $idProduct INNER JOIN
+				user AS User ON idUser";
+		$resultReview = $conn->query($query);
 	?>
 	<div class="super_container">
 
@@ -152,7 +155,7 @@
 					<li class="menu_item"><a href="#">contact</a></li>
 				</ul>
 			</div>
-		</div> -->
+		</div>
 
 		<?php include "header.php" ?>
 
@@ -272,48 +275,18 @@
 									</div>
 
 									<!-- User Review -->
-
-									<div class="user_review_container d-flex flex-column flex-sm-row">
-										<div class="review">
-											<div class="review_date">27 Aug 2016</div>
-											<div class="user_name">Brandon William</div>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-												tempor incididunt ut labore et dolore magna aliqua.</p>
-										</div>
-									</div>
-
-									<!-- User Review -->
-
-									<div class="user_review_container d-flex flex-column flex-sm-row">
-										<div class="review">
-											<div class="review_date">27 Aug 2016</div>
-											<div class="user_name">Brandon William</div>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-												tempor incididunt ut labore et dolore magna aliqua.</p>
-										</div>
-									</div>
-
-									<!-- User Review -->
-
-									<div class="user_review_container d-flex flex-column flex-sm-row">
-										<div class="review">
-											<div class="review_date">27 Aug 2016</div>
-											<div class="user_name">Brandon William</div>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-												tempor incididunt ut labore et dolore magna aliqua.</p>
-										</div>
-									</div>
-
-									<!-- User Review -->
-
-									<div class="user_review_container d-flex flex-column flex-sm-row">
-										<div class="review">
-											<div class="review_date">27 Aug 2016</div>
-											<div class="user_name">Brandon William</div>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-												tempor incididunt ut labore et dolore magna aliqua.</p>
-										</div>
-									</div>
+									<?php
+										if($resultReview->num_rows > 0){
+											while($row = $resultReview->fetch_assoc()){
+												echo "<div class='user_review_container d-flex flex-column flex-sm-row'>";
+													echo "<div class='review'>";
+														echo "<div class='user_name'>$row[FullName]</div>";
+														echo "<p>$row[ReviewerComment]</p>";
+													echo "</div>";
+												echo "</div>";
+											}
+										}
+									?>
 								</div>
 
 								<!-- Add Review -->
@@ -398,7 +371,7 @@
 		<!-- Footer -->
 		<?php include "footer.php" ?>
 
-		<!-- <footer class="footer">
+		<footer class="footer">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
@@ -522,4 +495,4 @@
 	
 </body>
 
-</html> -->
+</html>
