@@ -40,10 +40,13 @@
                                 <ul class="navbar_menu">
                                     <li><a href="index.php">Home</a></li>
                                     <li><a href="history.php">History</a></li>
-                                </ul>
-                                <ul class="navbar_user">
-                                    <!-- <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li> -->
-                                    <li><a href="login.php"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                                    <?php
+                                        if(isset($_COOKIE["sid"])) {
+                                            echo '<li><a href="logout.php">Logout</a></li>';
+                                        }else {
+                                            echo '<li><a href="login.php"><i class="fa fa-user" aria-hidden="true"></i> Login</a></li>';
+                                        }
+                                    ?>
                                 </ul>
                                 <div class="hamburger_container">
                                     <i class="fa fa-bars" aria-hidden="true"></i>
