@@ -105,7 +105,7 @@
 		}
 		
 		$query = "SELECT User.full_name AS FullName, Review.comment AS ReviewerComment FROM comment AS Review WHERE idProduct = $idProduct INNER JOIN
-				user AS User ON idUser";
+				user AS User ON User.idUser = Review.idUser";
 		$resultReview = $conn->query($query);
 	?>
 	<div class="super_container">
