@@ -39,6 +39,12 @@
                         <input class="w3-input" type="password" name="pass" required><br>
                         <input type="submit" value="Login" class="btn btn-block">
                     </form><br>
+                    <?php
+                        if(ISSET($_GET["status"]) == "error")
+                            echo '<div class="alert alert-danger">
+                            <strong>Error!</strong>Invalid Input
+                          </div>';
+                    ?>
                     <div class="text-center"><a href="signup.php">Do not have an account? Register</a></div>
                 </div>
                 <div class="col-md-3"></div>
