@@ -31,7 +31,6 @@
     <div class="hamburger_menu_content text-right">
         <ul class="menu_top_nav">
             <li class="menu_item"><a href="index.php">Home</a></li>
-            <li class="menu_item"><a href="product.php">Product</a></li>
             <li class="menu_item"><a href="history.php">History</a></li>
         </ul>
     </div>
