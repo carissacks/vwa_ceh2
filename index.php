@@ -7,13 +7,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="Colo Shop Template">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
-	<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
-	<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
-	<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+
+	<!-- css -->
+	<?php include "css.php" ?>
 </head>
 
 <body>
@@ -21,44 +17,7 @@
 	<div class="super_container">
 
 		<!-- Header -->
-
-		<header class="header trans_300">
-			<!-- Main Navigation -->
-
-			<div class="main_nav_container">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12 text-right">
-							<div class="logo_container">
-								<a href="#">VWA<span>CEH2</span></a>
-							</div>
-							<nav class="navbar">
-								<ul class="navbar_menu">
-									<li><a href="#">home</a></li>
-									<li><a href="#">shop</a></li>
-								</ul>
-								<ul class="navbar_user">
-									<li><a href="login.php"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-								</ul>
-								<div class="hamburger_container">
-									<i class="fa fa-bars" aria-hidden="true"></i>
-								</div>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
-
-		<div class="hamburger_menu">
-			<div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
-			<div class="hamburger_menu_content text-right">
-				<ul class="menu_top_nav">
-					<li class="menu_item"><a href="#">home</a></li>
-					<li class="menu_item"><a href="#">shop</a></li>
-				</ul>
-			</div>
-		</div>
+		<?php include "header.php" ?>
 
 		<!-- Slider -->
 
@@ -69,7 +28,7 @@
 						<div class="main_slider_content">
 							<h6>Spring / Summer Collection 2017</h6>
 							<h1>Get up to 30% Off New Arrivals</h1>
-							<div class="red_button shop_now_button"><a href="#products">shop now</a></div>
+							<div class="red_button shop_now_button"><a href="#">shop now</a></div>
 						</div>
 					</div>
 				</div>
@@ -87,22 +46,19 @@
 						</div>
 					</div>
 				</div>
-				<div class="row justify-content-center my-4 search_box">
+				<div class="row justify-content-center table-secondary">
 					<div class="col-lg-6">
 						<form action="post">
-							<div
-								class="search_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-center">
+							<div class="search_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-center">
 								<input id="search_item" type="txt" placeholder="Search Item" required="required">
-								<button id="search_submit" type="submit" class="search_submit_btn trans_300"
-									value="Submit">Search</button>
+								<button id="search_submit" type="submit" class="search_submit_btn trans_300" value="Submit">Search</button>
 							</div>
 						</form>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col">
-						<div class="product-grid"
-							data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
+						<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
 
 							<!-- Product 1 -->
 
@@ -112,12 +68,11 @@
 										<img src="images/product_1.png" alt="">
 									</div>
 									<div class="product_info">
-										<h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital
-												Camera (Silver)</a></h6>
+										<h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
 										<div class="product_price">$520.00</div>
 									</div>
 								</div>
-								<div class="red_button detail_button"><a href="#">See Detail</a></div>
+								<div class="red_button add_to_cart_button"><a href="#">See Detail</a></div>
 							</div>
 
 							<!-- Product 2 -->
@@ -128,12 +83,11 @@
 										<img src="images/product_2.png" alt="">
 									</div>
 									<div class="product_info">
-										<h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved
-												27-Inch FHD Monitor</a></h6>
+										<h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
 										<div class="product_price">$610.00</div>
 									</div>
 								</div>
-								<div class="red_button detail_button"><a href="#">add to cart</a></div>
+								<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
 							</div>
 
 							<!-- Product 3 -->
@@ -144,12 +98,11 @@
 										<img src="images/product_3.png" alt="">
 									</div>
 									<div class="product_info">
-										<h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout
-												Edition</a></h6>
+										<h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
 										<div class="product_price">$120.00</div>
 									</div>
 								</div>
-								<div class="red_button detail_button"><a href="#">add to cart</a></div>
+								<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
 							</div>
 
 							<!-- Product 4 -->
@@ -159,17 +112,14 @@
 									<div class="product_image">
 										<img src="images/product_4.png" alt="">
 									</div>
-									<div
-										class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
-										<span>sale</span></div>
+									<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
 									<div class="favorite favorite_left"></div>
 									<div class="product_info">
-										<h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo
-												Thermal Label Printer</a></h6>
+										<h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
 										<div class="product_price">$410.00</div>
 									</div>
 								</div>
-								<div class="red_button detail_button"><a href="#">add to cart</a></div>
+								<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
 							</div>
 
 							<!-- Product 5 -->
@@ -180,12 +130,11 @@
 										<img src="images/product_5.png" alt="">
 									</div>
 									<div class="product_info">
-										<h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold &
-												Grey</a></h6>
+										<h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
 										<div class="product_price">$180.00</div>
 									</div>
 								</div>
-								<div class="red_button detail_button"><a href="#">add to cart</a></div>
+								<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
 							</div>
 
 							<!-- Product 6 -->
@@ -196,16 +145,13 @@
 										<img src="images/product_6.png" alt="">
 									</div>
 									<div class="favorite favorite_left"></div>
-									<div
-										class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
-										<span>-$20</span></div>
+									<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div>
 									<div class="product_info">
-										<h6 class="product_name"><a href="#single.html">Fujifilm X100T 16 MP Digital
-												Camera (Silver)</a></h6>
+										<h6 class="product_name"><a href="#single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
 										<div class="product_price">$520.00<span>$590.00</span></div>
 									</div>
 								</div>
-								<div class="red_button detail_button"><a href="#">add to cart</a></div>
+								<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
 							</div>
 
 							<!-- Product 7 -->
@@ -216,12 +162,11 @@
 										<img src="images/product_7.png" alt="">
 									</div>
 									<div class="product_info">
-										<h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved
-												27-Inch FHD Monitor</a></h6>
+										<h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
 										<div class="product_price">$610.00</div>
 									</div>
 								</div>
-								<div class="red_button detail_button"><a href="#">add to cart</a></div>
+								<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
 							</div>
 
 							<!-- Product 8 -->
@@ -232,12 +177,11 @@
 										<img src="images/product_8.png" alt="">
 									</div>
 									<div class="product_info">
-										<h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout
-												Edition</a></h6>
+										<h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
 										<div class="product_price">$120.00</div>
 									</div>
 								</div>
-								<div class="red_button detail_button"><a href="#">add to cart</a></div>
+								<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
 							</div>
 
 							<!-- Product 9 -->
@@ -247,17 +191,14 @@
 									<div class="product_image">
 										<img src="images/product_9.png" alt="">
 									</div>
-									<div
-										class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
-										<span>sale</span></div>
+									<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
 									<div class="favorite favorite_left"></div>
 									<div class="product_info">
-										<h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo
-												Thermal Label Printer</a></h6>
+										<h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
 										<div class="product_price">$410.00</div>
 									</div>
 								</div>
-								<div class="red_button detail_button"><a href="#">add to cart</a></div>
+								<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
 							</div>
 
 							<!-- Product 10 -->
@@ -268,12 +209,11 @@
 										<img src="images/product_10.png" alt="">
 									</div>
 									<div class="product_info">
-										<h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold &
-												Grey</a></h6>
+										<h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
 										<div class="product_price">$180.00</div>
 									</div>
 								</div>
-								<div class="red_button detail_button"><a href="#">add to cart</a></div>
+								<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
 							</div>
 						</div>
 					</div>
@@ -328,13 +268,11 @@
 
 
 		<!-- Footer -->
-
-		<footer class="footer">
+		<footer class="footer" id="footer">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
-						<div
-							class="footer_nav_container d-flex flex-sm-row flex-column align-items-center justify-content-lg-start justify-content-center text-center">
+						<div class="footer_nav_container d-flex flex-sm-row flex-column align-items-center justify-content-lg-start justify-content-center text-center">
 							<ul class="footer_nav">
 								<li><a href="#">Blog</a></li>
 								<li><a href="#">FAQs</a></li>
@@ -343,8 +281,7 @@
 						</div>
 					</div>
 					<div class="col-lg-6">
-						<div
-							class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
+						<div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
 							<ul>
 								<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 								<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
@@ -358,24 +295,17 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="footer_nav_container">
-							<div class="cr">©2018 All Rights Reserverd. Made with <i class="fa fa-heart-o"
-									aria-hidden="true"></i> by <a href="#">Colorlib</a> &amp; distributed by <a
-									href="https://themewagon.com">ThemeWagon</a></div>
+							<div class="cr">©2018 All Rights Reserverd. Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#">Colorlib</a> &amp; distributed by <a href="https://themewagon.com">ThemeWagon</a></div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</footer>
-
 	</div>
 
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="styles/bootstrap4/popper.js"></script>
-	<script src="styles/bootstrap4/bootstrap.min.js"></script>
-	<script src="plugins/Isotope/isotope.pkgd.min.js"></script>
-	<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-	<script src="plugins/easing/easing.js"></script>
-	<script src="js/custom.js"></script>
+	<!-- JS -->
+	<?php include "js.php" ?>
+
 </body>
 
 </html>
