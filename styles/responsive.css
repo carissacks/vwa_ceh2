@@ -38,11 +38,11 @@
 	}
 	.product-item
 	{
-		height: 360px;
+		height: 475px;
 	}
 	.product
 	{
-		height: 320px;
+		height: 90%;
 	}
 	.single_product_thumbnails ul li
 	{
@@ -98,6 +98,7 @@
 	.product-item
 	{
 		width: 25%;
+		height: 400px;
 	}
 	.image_col
 	{
@@ -191,11 +192,11 @@
 	.product-item
 	{
 		width: 33.333333333333%;
-		height: 345px;
+		height: 400px;
 	}
 	.product
 	{
-		height: 305px;
+		height: 90%;
 	}
 	.grid_sorting_button
 	{
@@ -264,11 +265,11 @@
 	.product-item
 	{
 		width: 50%;
-		height: 420px;
+		height: 475px;
 	}
 	.product
 	{
-		height: 380px;
+		height: 90%;
 	}
 	.add_to_cart_button
 	{

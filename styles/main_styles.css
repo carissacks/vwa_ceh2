@@ -711,7 +711,7 @@ section
 .product-item
 {
 	width: 20%;
-	height: 380px;
+	height: 475px;
 	cursor: pointer;
 }
 .product-item::after
@@ -740,7 +740,7 @@ section
 .product
 {
 	width: 100%;
-	height: 340px;
+	height: 90%;
 	border-right: solid 1px #e9e9e9;
 }
 .product_image
@@ -759,7 +759,7 @@ section
 }
 .product_name
 {
-	margin-top: 27px;
+	margin-top: 10px;
 }
 .product_name a
 {
