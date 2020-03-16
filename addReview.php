@@ -6,7 +6,7 @@
             $idProduct = $_POST['idProduct'];
             $message = $_POST['reviewMessage'];
             $cookie = $_COOKIE['SID'];
-            $arrayCookie = explode("#",base64_decode(base64_decode($cookie)));
+            $arrayCookie = explode(";",base64_decode(base64_decode($cookie)));
             $username = $arrayCookie[1];
 
             $query = "SELECT idUser FROM user WHERE username = $username LIMIT 1";
