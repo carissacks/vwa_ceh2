@@ -80,7 +80,7 @@
 								echo "<div class='product_price'>$$product[product_price].00</div>";
 								echo "</div>";
 								echo "</div>";
-								echo "<div class='red_button detail_button'><a href='product_detail.php'>See Details</a></div>";
+								echo "<div class='red_button detail_button'><a href='product_detail.php?idProduct=$product[idProduct]'>See Details</a></div>";
 								echo "</div>";
 							}
 							?>

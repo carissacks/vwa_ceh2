@@ -41,7 +41,7 @@
                                     <li><a href="index.php">Home</a></li>
                                     <li><a href="history.php">History</a></li>
                                     <?php
-                                        if(isset($_COOKIE["sid"])) {
+                                        if(isset($_COOKIE["SID"])) {
                                             echo '<li><a href="logout.php">Logout</a></li>';
                                         }else {
                                             echo '<li><a href="login.php"><i class="fa fa-user" aria-hidden="true"></i> Login</a></li>';

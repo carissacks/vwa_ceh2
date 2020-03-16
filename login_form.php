@@ -10,7 +10,7 @@
         while($row = $result->fetch_assoc()) {
             $cookie = $row["role_id"] . ";" . $row["username"] . ";UTS_CEH2";
         }
-        setcookie("sid", base64_encode(base64_encode($cookie)), time()+ 86400);
+        setcookie("SID", base64_encode(base64_encode($cookie)), time()+ 86400);
         header("location:http://localhost/vwa_ceh2/index.php");
     }else{
         header("location:http://localhost/vwa_ceh2/login.php?status=error");	

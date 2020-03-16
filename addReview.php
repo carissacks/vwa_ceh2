@@ -2,7 +2,9 @@
     include 'connect_db.php';
 
     if(isset($_COOKIE['SID'])){
+        
         if(isset($_POST['submitReview'])){
+
             $idProduct = $_POST['idProduct'];
             $message = $_POST['reviewMessage'];
             $cookie = $_COOKIE['SID'];
@@ -18,7 +20,9 @@
                 }
                 $query = "INSERT INTO comment(idUser, idProduct, comment) VALUES($idUser, $idProduct, $message)";
                 $result = $conn->query($query);
-            }            
+            }
+            echo "A";
+            header("Location : product_detail.php?idProduct=".$idProduct);            
         }
     }
 ?>
