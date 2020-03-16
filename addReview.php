@@ -16,10 +16,10 @@
                 while($row = $result->fetch_assoc()){
                     $idUser = $row['idUser'];
                 }
-                $query = "INSERT INTO comment(idUser, idProduct, comment) VALUES($idUser, $idProduct, $message)";
+                $query = "INSERT INTO comment(idUser, idProduct, comment) VALUES($idUser, $idProduct, '$message')";
                 $result = $conn->query($query);
             }
-            header("location:product_detail.php?idProduct=".$idProduct);            
         }
     }
+    header("location:product_detail.php?idProduct=".$idProduct);
 ?>
