@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,13 +8,12 @@
 	<meta name="description" content="Colo Shop Template">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- css -->
-	<?php include "css.php" ?>
+	<?php ##include "css.php" ?>
 </head>
 
 <body>
 
-	<div class="super_container">
+	<div class="super_container"> -->
 
 		<!-- Header -->
 		<?php include "header.php" ?>
@@ -287,7 +286,7 @@
 
 
 		<!-- Footer -->
-		<footer class="footer" id="footer">
+		<!-- <footer class="footer" id="footer">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
@@ -320,11 +319,11 @@
 				</div>
 			</div>
 		</footer>
-	</div>
+	</div> -->
 
 	<!-- JS -->
-	<?php include "js.php" ?>
+	<?php include "footer.php" ?>
 
-</body>
+<!-- </body> -->
 
-</html>
+<!-- </html> -->
