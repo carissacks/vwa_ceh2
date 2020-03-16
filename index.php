@@ -86,7 +86,10 @@ include "connect_db.php";
 
 					<?php
 
-					$query = "SELECT * FROM product";
+					if (isset($_POST['search_item'])) {
+						$search_item = $_POST['search_item'];
+						$query = "SELECT * FROM product WHERE product_name LIKE '%$search_item%'";
+					} else $query = "SELECT * FROM product";
 					$products = $conn->query($query);
 
 					foreach ($products as $product) {
