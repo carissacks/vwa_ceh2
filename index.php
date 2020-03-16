@@ -66,12 +66,11 @@
 							$products = $conn->query($query);
 
 							foreach ($products as $product) {
-								echo "<div class='product-item men'>";
+								echo "<div class='product-item'>";
 								echo "<div class='product'>";
 								echo "<div class='product_image'>";
 								echo "<img src='images/products/$product[product_image]' alt=''>";
 								echo "</div>";
-								echo "<div class='favorite favorite_left'></div>";
 								echo "<div class='product_info'>";
 								echo "<h6 class='product_name'><a href='product_detail.php'>$product[product_name]</a></h6>";
 								echo "<div class='product_price'>$$product[product_price].00</div>";
@@ -81,7 +80,6 @@
 								echo "</div>";
 							}
 							?>
-
 						</div>
 					</div>
 				</div>
