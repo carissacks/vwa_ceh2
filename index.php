@@ -59,140 +59,105 @@ include "connect_db.php";
 						<input id="search_item" type="txt" name="search_item" placeholder="Search Item" required="required">
 						<button id="search_submit" type="submit" class="search_submit_btn trans_300" value="Submit">Search</button>
 					</div>
-					<<<<<<< HEAD </form> </div> </div> <div class="row">
-						<div class="col">
-							<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
+				</form>
+			</div>
+		</div>
 
-								<?php
-								include "connect_db.php";
+		<?php
+		if (isset($_COOKIE["SID"])) {
+			echo '<div class="card"><div class="card-header">Balance Account</div><div class="card-body">';
+			echo '<blockquote class="blockquote mb-0"><p class="text-center">';
+			$sid = base64_decode(base64_decode($_COOKIE["SID"]));
+			$array = explode(';', $sid, 3);
+			$username = $array[1];
 
-								if (isset($_POST['search_item'])) {
-									$search_item = $_POST['search_item'];
-									// if (preg_match('/(and|null|where|limit)/', $search_item)) exit('1'); // no sqli keywords
-									// if (preg_match('/\s/', $search_item)) exit('2');
-									$query = "SELECT * FROM product WHERE product_name LIKE '%$search_item%'";
-								} else $query = "SELECT * FROM product";
+			$sql = "SELECT user_balance FROM user WHERE username = '$username'";
+			$balance = $conn->query($sql);
+			foreach ($balance as $row) {
+				$balance = $row["user_balance"];
+			}
+			echo "Your Balance is : " . $balance;
+			echo '</p></blockquote></div></div>';
+		}
+		?>
+		<div class="row">
+			<div class="col">
+				<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
 
-								$products = $conn->query($query);
+					<?php
 
-								foreach ($products as $product) {
-									echo "<div class='product-item men'>";
-									echo "<div class='product'>";
-									echo "<div class='product_image'>";
-									echo "<img src='images/products/$product[product_image]' alt=''>";
-									echo "</div>";
-									echo "<div class='favorite favorite_left'></div>";
-									echo "<div class='product_info'>";
-									echo "<h6 class='product_name'><a href='product_detail.php'>$product[product_name]</a></h6>";
-									echo "<div class='product_price'>$$product[product_price].00</div>";
-									echo "</div>";
-									echo "</div>";
-									echo "<div class='red_button detail_button'><a href='product_detail.php'>See Details</a></div>";
-									echo "</div>";
-								}
+					$query = "SELECT * FROM product";
+					$products = $conn->query($query);
 
-								?>
-
-								=======
-							</div>
-							<?php
-							if (isset($_COOKIE["SID"])) {
-								echo '<div class="card"><div class="card-header">Balance Account</div><div class="card-body">';
-								echo '<blockquote class="blockquote mb-0"><p class="text-center">';
-								$sid = base64_decode(base64_decode($_COOKIE["SID"]));
-								$array = explode(';', $sid, 3);
-								$username = $array[1];
-
-								$sql = "SELECT user_balance FROM user WHERE username = '$username'";
-								$balance = $conn->query($sql);
-								foreach ($balance as $row) {
-									$balance = $row["user_balance"];
-								}
-								echo "Your Balance is : " . $balance;
-								echo '</p></blockquote></div></div>';
-							}
-							?>
-							<div class="row">
-								<div class="col">
-									<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
-
-										<?php
-
-										$query = "SELECT * FROM product";
-										$products = $conn->query($query);
-
-										foreach ($products as $product) {
-											echo "<div class='product-item'>";
-											echo "<div class='product'>";
-											echo "<div class='product_image'>";
-											echo "<img src='images/products/$product[product_image]' alt=''>";
-											echo "</div>";
-											echo "<div class='product_info'>";
-											echo "<h6 class='product_name'><a href='product_detail.php?idProduct=$product[idProduct]'>$product[product_name]</a></h6>";
-											echo "<div class='product_price'>$$product[product_price].00</div>";
-											echo "</div>";
-											echo "</div>";
-											echo "<div class='red_button detail_button'><a href='product_detail.php?idProduct=$product[idProduct]'>See Details</a></div>";
-											echo "</div>";
-										}
-										?>
-									</div>
-								</div>
-								>>>>>>> 378ffe1a02a03eb9b2ad2473a4de8046cec29452
-							</div>
-						</div>
+					foreach ($products as $product) {
+						echo "<div class='product-item'>";
+						echo "<div class='product'>";
+						echo "<div class='product_image'>";
+						echo "<img src='images/products/$product[product_image]' alt=''>";
+						echo "</div>";
+						echo "<div class='product_info'>";
+						echo "<h6 class='product_name'><a href='product_detail.php?idProduct=$product[idProduct]'>$product[product_name]</a></h6>";
+						echo "<div class='product_price'>$$product[product_price].00</div>";
+						echo "</div>";
+						echo "</div>";
+						echo "<div class='red_button detail_button'><a href='product_detail.php?idProduct=$product[idProduct]'>See Details</a></div>";
+						echo "</div>";
+					}
+					?>
+				</div>
 			</div>
 		</div>
 	</div>
+</div>
 
-	<!-- Benefit -->
+<!-- Benefit -->
 
-	<div class="benefit">
-		<div class="container mb-5">
-			<div class="row benefit_row">
-				<div class="col-lg-3 benefit_col">
-					<div class="benefit_item d-flex flex-row align-items-center">
-						<div class="benefit_icon"><i class="fa fa-truck" aria-hidden="true"></i></div>
-						<div class="benefit_content">
-							<h6>free shipping</h6>
-							<p>Suffered Alteration in Some Form</p>
-						</div>
+<div class="benefit">
+	<div class="container mb-5">
+		<div class="row benefit_row">
+			<div class="col-lg-3 benefit_col">
+				<div class="benefit_item d-flex flex-row align-items-center">
+					<div class="benefit_icon"><i class="fa fa-truck" aria-hidden="true"></i></div>
+					<div class="benefit_content">
+						<h6>free shipping</h6>
+						<p>Suffered Alteration in Some Form</p>
 					</div>
 				</div>
-				<div class="col-lg-3 benefit_col">
-					<div class="benefit_item d-flex flex-row align-items-center">
-						<div class="benefit_icon"><i class="fa fa-money" aria-hidden="true"></i></div>
-						<div class="benefit_content">
-							<h6>cach on delivery</h6>
-							<p>The Internet Tend To Repeat</p>
-						</div>
+			</div>
+			<div class="col-lg-3 benefit_col">
+				<div class="benefit_item d-flex flex-row align-items-center">
+					<div class="benefit_icon"><i class="fa fa-money" aria-hidden="true"></i></div>
+					<div class="benefit_content">
+						<h6>cach on delivery</h6>
+						<p>The Internet Tend To Repeat</p>
 					</div>
 				</div>
-				<div class="col-lg-3 benefit_col">
-					<div class="benefit_item d-flex flex-row align-items-center">
-						<div class="benefit_icon"><i class="fa fa-undo" aria-hidden="true"></i></div>
-						<div class="benefit_content">
-							<h6>45 days return</h6>
-							<p>Making it Look Like Readable</p>
-						</div>
+			</div>
+			<div class="col-lg-3 benefit_col">
+				<div class="benefit_item d-flex flex-row align-items-center">
+					<div class="benefit_icon"><i class="fa fa-undo" aria-hidden="true"></i></div>
+					<div class="benefit_content">
+						<h6>45 days return</h6>
+						<p>Making it Look Like Readable</p>
 					</div>
 				</div>
-				<div class="col-lg-3 benefit_col">
-					<div class="benefit_item d-flex flex-row align-items-center">
-						<div class="benefit_icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
-						<div class="benefit_content">
-							<h6>opening all week</h6>
-							<p>8AM - 09PM</p>
-						</div>
+			</div>
+			<div class="col-lg-3 benefit_col">
+				<div class="benefit_item d-flex flex-row align-items-center">
+					<div class="benefit_icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
+					<div class="benefit_content">
+						<h6>opening all week</h6>
+						<p>8AM - 09PM</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 
 
-	<!-- Footer -->
-	<!-- <footer class="footer" id="footer">
+<!-- Footer -->
+<!-- <footer class="footer" id="footer">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
@@ -227,9 +192,9 @@ include "connect_db.php";
 		</footer>
 	</div> -->
 
-	<!-- JS -->
-	<?php include "footer.php" ?>
+<!-- JS -->
+<?php include "footer.php" ?>
 
-	<!-- </body> -->
+<!-- </body> -->
 
-	<!-- </html> -->
+<!-- </html> -->
