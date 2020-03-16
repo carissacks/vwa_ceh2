@@ -48,7 +48,6 @@
                     echo '</div></div>';
                 }
                 $conn->close();
-
             ?>
         
     </div>

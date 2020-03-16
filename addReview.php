@@ -1,17 +1,20 @@
 <?php
     include 'connect_db.php';
 
-    if(isset($_COOKIE['SID'])){
-        
-        if(isset($_POST['submitReview'])){
+    echo "A";
 
+    if(isset($_COOKIE['SID'])){
+        echo "BA";
+        if(isset($_POST['submitReview'])){
+            echo "cBA";
             $idProduct = $_POST['idProduct'];
-            $message = $_POST['reviewMessage'];
+            $message = $_POST['reviewerMessage'];
             $cookie = $_COOKIE['SID'];
-            $arrayCookie = explode("#",base64_decode(base64_decode($cookie)));
+            echo $cookie;
+            $arrayCookie = explode(";",base64_decode(base64_decode($cookie)));
             $username = $arrayCookie[1];
 
-            $query = "SELECT idUser FROM user WHERE username = $username LIMIT 1";
+            $query = "SELECT idUser FROM user WHERE username = '$username' LIMIT 1";
             $result = $conn->query($query);
 
             if($result->num_rows > 0){
@@ -22,7 +25,7 @@
                 $result = $conn->query($query);
             }
             echo "A";
-            header("Location : product_detail.php?idProduct=".$idProduct);            
+            header("location:product_detail.php?idProduct=".$idProduct);            
         }
     }
 ?>

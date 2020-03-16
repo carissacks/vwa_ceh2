@@ -327,7 +327,7 @@
 												<h1>Add Review</h1>
 											</div>
 											<div>
-												<textarea id="review_message" class="input_review" name="reviewerMessage"
+												<textarea id="reviewerMessage" class="input_review" name="reviewerMessage"
 													placeholder="Your Review" rows="4" required
 													data-error="Please, leave us a review."></textarea>
 											</div>

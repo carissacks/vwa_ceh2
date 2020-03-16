@@ -62,10 +62,10 @@
 					</div>
 				</div>
 				<?php
-					if(isset($_COOKIE["sid"])) {
+					if(isset($_COOKIE["SID"])) {
 						echo '<div class="card"><div class="card-header">Balance Account</div><div class="card-body">';
 						echo '<blockquote class="blockquote mb-0"><p class="text-center">';
-						$sid = base64_decode(base64_decode($_COOKIE["sid"]));
+						$sid = base64_decode(base64_decode($_COOKIE["SID"]));
 						$array = explode(';',$sid, 3);
 						$username = $array[1];
 
@@ -94,7 +94,7 @@
 								echo "<img src='images/products/$product[product_image]' alt=''>";
 								echo "</div>";
 								echo "<div class='product_info'>";
-								echo "<h6 class='product_name'><a href='product_detail.php'>$product[product_name]</a></h6>";
+								echo "<h6 class='product_name'><a href='product_detail.php?idProduct=$product[idProduct]'>$product[product_name]</a></h6>";
 								echo "<div class='product_price'>$$product[product_price].00</div>";
 								echo "</div>";
 								echo "</div>";
