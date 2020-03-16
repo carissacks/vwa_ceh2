@@ -36,19 +36,17 @@
 
 					<div class="breadcrumbs d-flex flex-row align-items-center">
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="categories.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Men's</a>
-							</li>
-							<li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Single
-									Product</a></li>
+							<li><a href="index.php">Home</a></li>
+							<li class="active"><i class="fa fa-angle-right" aria-hidden="true"></i>
+							<?php echo $productName; ?></li>
 						</ul>
 					</div>
 
 				</div>
 			</div>
 
-			<div class="row">
-				<div class="col-lg-7">
+			<div class="row justify-content-around">
+				<div class="col-lg-4">
 					<div class="single_product_pics">
 						<div class="row">
 							<div class="col-lg-12 image_col order-lg-2 order-1">
@@ -117,20 +115,6 @@
 							</div>
 						</div>
 
-						<!-- Tab Additional Info -->
-
-						<div id="tab_2" class="tab_container">
-							<div class="row">
-								<div class="col additional_info_col">
-									<div class="tab_title additional_info_title">
-										<h4>Additional Information</h4>
-									</div>
-									<p>COLOR:<span>Gold, Red</span></p>
-									<p>SIZE:<span>L,M,XL</span></p>
-								</div>
-							</div>
-						</div>
-
 						<!-- Tab Reviews -->
 
 						<div id="tab_3" class="tab_container">
@@ -162,7 +146,6 @@
 								<!-- Add Review -->
 
 								<div class="col-10 col-md-4 add_review_col">
-
 									<div class="add_review">
 										<form id="review_form" action="addReview.php" method="post">
   											<input type="text" name="idProduct" value="<?php echo $idProduct;?>" hidden>

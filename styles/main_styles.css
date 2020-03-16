@@ -1284,11 +1284,11 @@ section
 /*********************************
 8. Add Review
 *********************************/
-
-.add_review {
-	margin-top: 94px;
+.add_review_col{
+	background-color: #f2f2f2;
+	padding-top: 40px;
+	padding-bottom: 40px;
 }
-
 #review_form>div {
 	margin-bottom: 40px;
 }
@@ -1619,3 +1619,7 @@ section
     background-color: #FE4C50;
     color: white;
   }
+
+#history{
+	min-height: 90vh;
+}
