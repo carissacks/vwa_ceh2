@@ -42,6 +42,10 @@
                                     <li><a href="history.php">History</a></li>
                                     <?php
                                         if(isset($_COOKIE["SID"])) {
+                                            $sid = base64_decode(base64_decode($_COOKIE["SID"]));
+                                            $array = explode(';',$sid, 3);
+                                            $priv = $array[0];
+                                            if($priv === "admin") echo '<li><a href="admin.php">Admin</a></li>';
                                             echo '<li><a href="logout.php">Logout</a></li>';
                                         }else {
                                             echo '<li><a href="login.php"><i class="fa fa-user" aria-hidden="true"></i> Login</a></li>';
