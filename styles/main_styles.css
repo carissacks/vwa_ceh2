@@ -139,15 +139,7 @@ h1, h2, h3, h4, h5, h6
 	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
 	text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
-h1::selection,
-h2::selection,
-h3::selection,
-h4::selection,
-h5::selection,
-h6::selection
-{
 
-}
 ::-webkit-input-placeholder
 {
 	font-size: 16px !important;
@@ -449,7 +441,7 @@ section
 	display: block;
 	position: relative;
 	border-bottom: solid 1px #b5aec4;
-	vertical-align: middle;
+	/* vertical-align: middle; */
 }
 .menu_item > a
 {
@@ -656,10 +648,6 @@ section
 .grid_sorting_button:first-child
 {
 	margin-left: 0px;
-}
-.grid_sorting_button:last-child
-{
-
 }
 .grid_sorting_button.active:hover
 {
@@ -1296,11 +1284,11 @@ section
 /*********************************
 8. Add Review
 *********************************/
-
-.add_review {
-	margin-top: 94px;
+.add_review_col{
+	background-color: #f2f2f2;
+	padding-top: 40px;
+	padding-bottom: 40px;
 }
-
 #review_form>div {
 	margin-bottom: 40px;
 }
@@ -1569,4 +1557,69 @@ section
 .footer_social ul li a:hover
 {
 	color: #fe4c50;
+}
+
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .modal-header {
+    padding: 2px 16px;
+    background-color: #FE4C50;
+    color: white;
+  }
+
+#history{
+	min-height: 90vh;
 }

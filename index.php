@@ -1,28 +1,7 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<title>Colo Shop</title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="Colo Shop Template">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<?php ##include "css.php" 
-	?>
-</head>
-
-
-
-
-<body>
-
-	<div class="super_container"> -->
-
-<!-- Header -->
 <?php
 include "header.php";
 include "connect_db.php";
+include "functions.php"
 ?>
 
 <!-- Slider -->
@@ -67,15 +46,17 @@ include "connect_db.php";
 		if (isset($_COOKIE["SID"])) {
 			echo '<div class="card"><div class="card-header">Balance Account</div><div class="card-body">';
 			echo '<blockquote class="blockquote mb-0"><p class="text-center">';
-			$sid = base64_decode(base64_decode($_COOKIE["SID"]));
-			$array = explode(';', $sid, 3);
-			$username = $array[1];
 
-			$sql = "SELECT user_balance FROM user WHERE username = '$username'";
-			$balance = $conn->query($sql);
-			foreach ($balance as $row) {
-				$balance = $row["user_balance"];
-			}
+			// $sid = base64_decode(base64_decode($_COOKIE["SID"]));
+			// $array = explode(';', $sid, 3);
+			// $username = $array[1];
+
+			// $sql = "SELECT user_balance FROM user WHERE username = '$username'";
+			// $balance = $conn->query($sql);
+			// foreach ($balance as $row) {
+			// 	$balance = $row["user_balance"];
+			// }
+			$balance = getBalance($conn);
 			echo "Your Balance is : " . $balance;
 			echo '</p></blockquote></div></div>';
 		}
@@ -160,9 +141,8 @@ include "connect_db.php";
 		</div>
 	</div>
 
-
-	<!-- Footer -->
-	<!-- <footer class="footer" id="footer">
+	<<<<<<< HEAD <!-- Footer -->
+		<!-- <footer class="footer" id="footer">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
@@ -197,9 +177,12 @@ include "connect_db.php";
 		</footer>
 	</div> -->
 
-	<!-- JS -->
-	<?php include "footer.php" ?>
+		<!-- JS -->
+		<?php include "footer.php" ?>
 
-	<!-- </body> -->
+		<!-- </body> -->
 
-	<!-- </html> -->
+		<!-- </html> -->
+		=======
+		<?php include "footer.php" ?>
+		>>>>>>> cd5eebc5afb123131df4a8a01d1ba006c77633ce
