@@ -4,7 +4,7 @@
 <div class="container single_product_container">
     <h2>All History</h2>
 
-    <table id="history" class="display table">
+    <table class="table">
         <thead>
             <tr>
                 <th>No.</th>
@@ -19,7 +19,7 @@
                 JOIN user u ON h.idUser = u.idUser";
                 $count = 1;
                 $result = $conn->query($sql);
-                while($row = $result->fetch_assoc()) {
+                foreach($result as $row) {
                     echo "<tr><td>" . $count++ . "</td><td>" . $row["full_name"]. "</td><td>" . $row["product_name"]. "</td></tr>";
                 }
             ?>

@@ -7,8 +7,8 @@
             $query = "SELECT idUser FROM user WHERE username = '$username' LIMIT 1";
             $result = $conn->query($query);
 
-            if($result->num_rows > 0){
-                while($row = $result->fetch_assoc()) {
+            if($result->rowCount() > 0){
+                foreach($result as $row) {
                     $idUser = $row['idUser'];             
                 }
             }
@@ -37,8 +37,8 @@
             $query = "SELECT user_balance FROM user WHERE username = '$username' LIMIT 1";
             $result = $conn->query($query);
 
-            if($result->num_rows > 0){
-                while($row = $result->fetch_assoc()) {
+            if($result->rowCount() > 0){
+                foreach($result as $row) {
                     $balance = $row['user_balance'];             
                 }
             }
