@@ -108,7 +108,6 @@
                     echo '<li><a href="login.php"><i class="fa fa-user" aria-hidden="true"></i> Login</a></li>';
                 }
             ?>
-            <li class="menu_item"><a href="history.php">History</a></li>
         </ul>
     </div>
 </div>

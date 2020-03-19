@@ -5,7 +5,7 @@
 
     if(!isLogin()){
         // header("Location: http://localhost/vwa_ceh2");
-        header("location:$base_url");
+        header("Location: $base_url");
     }
 
     $id= getId($conn);

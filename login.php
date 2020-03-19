@@ -17,7 +17,7 @@
             <?php
                 if(ISSET($_GET["status"]) == "error")
                     echo '<div class="alert alert-danger">
-                    <strong>Error!</strong>Invalid Input
+                    <strong>Error!</strong> Incorrect username or password
                     </div>';
             ?>
             <div class="text-center"><a href="signup.php">Do not have an account? Register</a></div>
