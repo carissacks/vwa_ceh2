@@ -17,6 +17,11 @@
                 $cookie = $row["role_id"] . ";" . $row["username"] . ";UTS_CEH2";
             }
             setcookie("SID", base64_encode(base64_encode($cookie)), time()+ 86400);
+            if(isAdmin()){
+                setcookie("X", md5("admin"), time()+ 86400);
+            }else{
+                setcookie("X", md5("guest"), time()+ 86400);
+            }
             header("Location: $base_url");
         }else{
             header("Location: ".$base_url."/login.php?status=error");	
