@@ -7,8 +7,8 @@ $idProduct = $_GET['idProduct'];
 $query = "SELECT product_name, product_desc, product_image, product_price FROM product WHERE idProduct = $idProduct LIMIT 1";
 $result = $conn->query($query);
 
-if ($result->num_rows > 0) {
-	while ($row = $result->fetch_assoc()) {
+if ($result->rowCount() > 0) {
+	foreach($result as $row) {
 		$productName = $row['product_name'];
 		$productDesc = $row['product_desc'];
 		$productImage = $row['product_image'];
@@ -125,7 +125,7 @@ $resultReview = $conn->query($query);
 
 							<!-- User Review -->
 							<?php
-							if ($resultReview->num_rows > 0) {
+							if ($resultReview->rowCount() > 0) {
 								while ($row = $resultReview->fetch_assoc()) {
 									echo "<div class='user_review_container d-flex flex-column flex-sm-row table-bordered'>";
 									echo "<div class='review'>";
