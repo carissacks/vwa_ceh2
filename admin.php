@@ -5,8 +5,6 @@ require_once "functions.php";
 if(!isAdmin()){
     header("location:$base_url");  
     // headToBase();
-}else{
-    setRoleIdCookieDB($conn);
 }
 ?>
 
@@ -38,41 +36,50 @@ if(!isAdmin()){
         </table>
     </div>
     <div class="container mt-5 p-5 table-bordered">
-    <?php if($_COOKIE['X']!=md5("admin")):?>
-        <h2 class='text-danger'>Adding balance feature is currently unavailable.</h2>
-        <h5 class='text-danger'>You can't fool us.</h5>
-    <?php else:?>
-        <h2>Add User Balance</h2>
-        <form method="post" action="addBalance.php">
-            <div class="row p-2">
-                <div class="form-group col-10 col-md-4 p-1">
-                    <label for="idUser">Select user</label>
-                    <select class="form-control text-dark" name="idUser" required>
-                <?php 
-                    $sql = "SELECT idUser, full_name FROM user";
-                    $result = $conn->query($sql);
-                    foreach($result as $row):
-                        echo "<option value=".$row["idUser"].">" . $row["full_name"] . "</option>";
-                    endforeach;
-                ?>
-                    </select>
+    <?php if(isset($_COOKIE['X'])):?>
+        <?php if($_COOKIE['X']!=md5("admin")):?>
+            <h2 class='text-danger'>Adding balance feature is currently unavailable.</h2>
+            <h5 class='text-danger'>You can't fool us.</h5>
+        <?php else:?>
+            <h2>Add User Balance</h2>
+            <form method="post" action="addBalance.php">
+                <div class="row p-2">
+                    <div class="form-group col-10 col-md-4 p-1">
+                        <label for="idUser">Select user</label>
+                        <select class="form-control text-dark" name="idUser" required>
+                    <?php 
+                        $sql = "SELECT idUser, full_name FROM user";
+                        $result = $conn->query($sql);
+                        foreach($result as $row):
+                            echo "<option value=".$row["idUser"].">" . $row["full_name"] . "</option>";
+                        endforeach;
+                    ?>
+                        </select>
+                    </div>
+                    <div class="form-group col-10 col-md-4 p-1">
+                        <label for="nominal">Balance nominal</label>
+                        <input type="number" class="form-control text-dark" name="nominal" required>
+                    </div>
                 </div>
-                <div class="form-group col-10 col-md-4 p-1">
-                    <label for="nominal">Balance nominal</label>
-                    <input type="number" class="form-control text-dark" name="nominal" required>
+                <?php if(ISSET($_GET["status"])):
+                    if($_GET["status"] == "success"):?>
+                    <div class="alert alert-danger col-10 col-md-8">User balance is updated.</div>
+                <?php else:?>
+                    <div class="alert alert-success col-10 col-md-8">Failed to update user balance.</div>
+                <?php endif; endif;?>
+                <div class="row pl-2">
+                    <button type="submit" class="btn btn-primary p-2 col-1">Proceed</button>
                 </div>
-            </div>
-            <?php if(ISSET($_GET["status"])):
-                if($_GET["status"] == "error"):?>
-                <div class="alert alert-danger col-10 col-md-8">Failed to update user balance.</div>
-            <?php elseif($_GET["status"] == "success"):?>
-                <div class="alert alert-success col-10 col-md-8">User balance is updated.</div>
-            <?php endif; endif;?>
-            <div class="row pl-2">
-                <button type="submit" class="btn btn-primary p-2 col-1">Proceed</button>
+            </form>
+        <?php endif;?>
+        <?php else:?>
+        <form method="post" action="addBalance.php"?>
+            <div class="row pl-2 justify-content-center">
+                <button type="submit" class="btn btn-primary p-2 col-6">Add user balance</button>
             </div>
         </form>
         <?php endif;?>
+
     </div>
 </div>
 
