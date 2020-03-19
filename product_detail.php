@@ -1,7 +1,9 @@
 <?php
 include 'header.php';
 include 'connect_db.php';
+include "functions.php";
 
+$idUser = getId($conn);
 $idProduct = $_GET['idProduct'];
 
 $query = "SELECT product_name, product_desc, product_image, product_price FROM product WHERE idProduct = $idProduct LIMIT 1";
@@ -23,6 +25,12 @@ if ($result->rowCount() > 0) {
 
 $query = "SELECT User.full_name AS FullName, Review.comment AS ReviewerComment FROM comment AS Review INNER JOIN user User ON User.idUser = Review.idUser WHERE idProduct = $idProduct";
 $resultReview = $conn->query($query);
+
+$sql = "SELECT user_balance FROM User WHERE idUser = $idUser LIMIT 1";
+$balances = $conn->query($sql);
+foreach($balances as $row){
+	$user_balance = $row["user_balance"];
+}
 
 ?>
 
@@ -222,24 +230,29 @@ $resultReview = $conn->query($query);
 				<span class="close">&times;</span>
 			</div>
 			<div class="modal-body">
-				<form class="form" action="addProduct.php" method="post">
+				<form class="form" action="buy_item.php" method="post">
+					<input type="hidden" name="idProduct" value="<?php echo $idProduct; ?>">
 					<div class="form-group col-8">
 						<b for="Payment Type">Payment Type</b><br>
+						<!-- <select id="payment" name="paymentMethod" require>
+							<option value="1" id="optionCardNumber">Credit Card Number</option>
+							<option value="2" id="optionUserBalance">User Balance</option>
+						</select> -->
 						<div class="radio">
-							<input id="optionCardNumber" type="radio" name="radioOption" style="transform: scale(1.3)"><label style="margin-left: 2%">Credit Card Number</label>
+							<input id="optionCardNumber" value="credit" type="radio" name="radioOption" style="transform: scale(1.3)"><label style="margin-left: 2%">Credit Card Number</label>
 						</div>
 						<div class="radio">
-							<input id="optionUserBalance" type="radio" name="radioOption" style="transform: scale(1.3)"><label style="margin-left: 2%">User Balance</label>
+							<input id="optionUserBalance" value="balance" type="radio" name="radioOption" style="transform: scale(1.3)"><label style="margin-left: 2%">User Balance</label>
 						</div>
 					</div>
 					<div class="form-group col-8">
 						<div id="formCardNumber">
 							<b for="User Address">Input Credit Card Number</b><br>
-							<input id="cardNumber" class="input form-control" type="text" name="cardNumber" required>
+							<input id="cardNumber" class="input form-control" type="text" name="cardNumber">
 						</div>
 						<div id="formUserBalance">
 							<b for="User Address">Your User Balance</b><br>
-							<input id="userBalance" class="input form-control" type="text" name="cardNumber" value="1" disabled>
+							<input id="userBalance" class="input form-control" type="text" name="userBalance" value="<?php echo $user_balance ?>" disabled>
 						</div>
 					</div>
 					<div class="form-group col-8">
