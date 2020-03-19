@@ -2,12 +2,13 @@
     include "functions.php";
     include "header.php";
     include "connect_db.php";
-
-    $id= getId($conn);
-
-    if($id==0){
-        header("Location: http://localhost/vwa_ceh2");
-    }
+    
+    if(ISSET($_GET['id'])){
+        $id=$_GET['id'];
+        if($id == null){
+            header("Location: http://localhost/vwa_ceh2");
+        }
+    } 
     
 ?>
 

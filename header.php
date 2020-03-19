@@ -1,3 +1,7 @@
+<?php 
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,14 +44,23 @@
                                 <ul class="navbar_menu">
                                     <li><a href="index.php">Home</a></li>
                                     <?php
+                                        include "connect_db.php";
                                         if(isset($_COOKIE["SID"])) {
                                             $sid = base64_decode(base64_decode($_COOKIE["SID"]));
                                             $array = explode(';',$sid, 3);
                                             $priv = $array[0];
+                                            $user = $array[1];
                                             if($priv === "admin") echo '<li><a href="admin.php">Admin</a></li>';
                                             else {
+                                                $query = "SELECT idUser FROM user WHERE username = '$user' LIMIT 1";
+                                                $result = $conn->query($query);
+                                                if($result->rowCount() > 0){
+                                                    foreach($result as $row) {
+                                                        $idUser = $row['idUser'];             
+                                                    }
+                                                }
                                                 echo '<li><a href="history.php">History</a></li>';
-                                                echo '<li><a href="profile.php">Profile</a></li>';
+                                                echo '<li><a href="profile.php?id='.$idUser.'">Profile</a></li>';
                                             } 
                                             echo '<li><a href="logout.php">Logout</a></li>';
                                         }else {
