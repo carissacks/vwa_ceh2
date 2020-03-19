@@ -15,6 +15,7 @@
             }
         }else{
             $idUser= 0;
+            header("Location: $base_url/login.php");    
         }
         return $idUser;
     };
