@@ -142,6 +142,8 @@ foreach($balances as $row){
 									echo "</div>";
 									echo "</div>";
 								}
+							}else{
+								echo "No Review";
 							}
 
 							?>

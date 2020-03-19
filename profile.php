@@ -7,13 +7,13 @@
         if(ISSET($_GET['id'])){
             $id=$_GET['id'];
             if($id == null){
-                header("Location: http://localhost/vwa_ceh2");
+                header("Location: $base_url");
             }
         } else{
-            header("Location: http://localhost/vwa_ceh2");
+            header("Location: $base_url");
         }
     }else{
-        header("Location: http://localhost/vwa_ceh2");
+        header("Location: $base_url");
     }
     
 ?>

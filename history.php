@@ -4,7 +4,8 @@
     require_once "connect_db.php";
 
     if(!isLogin()){
-        header("Location: http://localhost/vwa_ceh2");
+        // header("Location: http://localhost/vwa_ceh2");
+        header("location:$base_url");
     }
 
     $id= getId($conn);

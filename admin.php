@@ -3,7 +3,8 @@ require_once "connect_db.php";
 require_once "functions.php"; 
 
 if(!isAdmin()){
-    header("location:http://localhost/vwa_ceh2");   
+    header("location:$base_url");  
+    // headToBase();
 }?>
 
 

@@ -1,5 +1,6 @@
 <?php 
-    include 'connect_db.php';
+    require_once 'connect_db.php';
+    require_once 'functions.php';
     
     $username = $_POST['username'];
     $password = md5($_POST['pass']);
@@ -12,8 +13,8 @@
             $cookie = $row["role_id"] . ";" . $row["username"] . ";UTS_CEH2";
         }
         setcookie("SID", base64_encode(base64_encode($cookie)), time()+ 86400);
-        header("location:http://localhost/vwa_ceh2/index.php");
+        header("Location :$base_url");
     }else{
-        header("location:http://localhost/vwa_ceh2/login.php?status=error");	
+        header("Location :$base_url/login.php?status=error");	
     }
 ?>

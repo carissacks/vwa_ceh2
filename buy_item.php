@@ -1,12 +1,13 @@
 <?php
+    require_once "connect_db.php";
+    require_once "functions.php";
+
     if(isset($_POST['radioOption'])){
         $option = $_POST['radioOption'];
     }
 
     $idProduct = $_POST["idProduct"];
     $address = $_POST["userAddress"];
-    include "connect_db.php";
-    include "functions.php";
 
     $idUser = getId($conn);
 
@@ -31,9 +32,9 @@
             $query2 = "UPDATE User SET credit_card = '$card_num' WHERE idUser = $idUser";
             $result2 = $conn->query($query2);
             if ($result == TRUE && $result2 == TRUE) {
-                header("location:http://localhost/vwa_ceh2/history.php");
+                header("Location: $base_url/history.php");
             }else{
-                header("location:http://localhost/vwa_ceh2/");
+                header("Location: $base_url");
             }
         }
         
@@ -45,9 +46,9 @@
             $query2 = "UPDATE User SET user_balance = '$last_balance' WHERE idUser = $idUser";
             $result2 = $conn->query($query2);
             if ($result == TRUE && $result2 == TRUE) {
-                header("location:http://localhost/vwa_ceh2/history.php");
+                header("Location :$base_url/history.php");
             }else{
-                header("location:http://localhost/vwa_ceh2/");
+                header("Location: $base_url");
             }
         }else {
             echo "saldonya ga cukup kak :(";

@@ -1,4 +1,5 @@
 <?php    
+    $base_url="http://localhost/vwa_ceh2";
     function getId($conn) {
         if(isset($_COOKIE['SID'])){
             $cookie = $_COOKIE['SID'];
@@ -63,4 +64,6 @@
             return true;
         }
         return false;
-    }
+    };
+
+?>
