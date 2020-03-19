@@ -4,18 +4,13 @@ require_once 'functions.php';
 
 $idUser = getId($conn);
 
-if ($idUser != 0) {
-    $message = $_POST['reviewerMessage'];
-    $idProduct = $_POST['idProduct'];
+$message = $_POST['reviewerMessage'];
+$idProduct = $_POST['idProduct'];
 
-    $query = "INSERT INTO comment(idUser, idProduct, comment) VALUES ($idUser, $idProduct, '$message')";
-    $result = $conn->query($query);
-    header("Location: $base_url/product_detail.php?idProduct=" . $idProduct);
+$query = "INSERT INTO comment(idUser, idProduct, comment) VALUES ($idUser, $idProduct, '$message')";
+$result = $conn->query($query);
+header("Location: $base_url/product_detail.php?idProduct=" . $idProduct);
 
-}
-else{
-    header("Location: $base_url/login.php");
-}
 
 // if(isset($_COOKIE['SID'])){
 //     if(isset($_POST['submitReview'])){
