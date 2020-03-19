@@ -1,5 +1,6 @@
 <?php 
-    include 'connect_db.php';
+    require_once 'connect_db.php';
+    require_once 'functions.php';
     
     $username = $_POST['username'];
     $full_name = $_POST['full_name'];
@@ -9,9 +10,9 @@
     $result = $conn->query($query);
 
     if ($result == TRUE) {
-        header("location:http://localhost/vwa_ceh2/login.php");
+        header("Location: $base_url/login.php");
     }else{
-        header("location:http://localhost/vwa_ceh2/signup.php");
+        header("Location: $base_url/signup.php");
     }
 
 ?>

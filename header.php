@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Colo Shop</title>
+    <title>VWA CEH2</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Colo Shop Template">
@@ -40,24 +40,28 @@
                                 <ul class="navbar_menu">
                                     <li><a href="index.php">Home</a></li>
                                     <?php
-                                        include "connect_db.php";
+                                        require_once "connect_db.php";
+                                        require_once "functions.php";
                                         if(isset($_COOKIE["SID"])) {
-                                            $sid = base64_decode(base64_decode($_COOKIE["SID"]));
-                                            $array = explode(';',$sid, 3);
-                                            $priv = $array[0];
-                                            $user = $array[1];
-                                            if($priv === "admin") echo '<li><a href="admin.php">Admin</a></li>';
-                                            else {
-                                                $query = "SELECT idUser FROM user WHERE username = '$user' LIMIT 1";
-                                                $result = $conn->query($query);
-                                                if($result->rowCount() > 0){
-                                                    foreach($result as $row) {
-                                                        $idUser = $row['idUser'];             
-                                                    }
-                                                }
+                                            // $sid = base64_decode(base64_decode($_COOKIE["SID"]));
+                                            // $array = explode(';',$sid, 3);
+                                            // $priv = $array[0];
+                                            // $user = $array[1];
+                                            // if($priv === "admin") echo '<li><a href="admin.php">Admin</a></li>';
+                                            // else {
+                                            //     $query = "SELECT idUser FROM user WHERE username = '$user' LIMIT 1";
+                                            //     $result = $conn->query($query);
+                                            //     if($result->rowCount() > 0){
+                                            //         foreach($result as $row) {
+                                            //             $idUser = $row['idUser'];             
+                                            //         }
+                                            //     }
+                                            if(isAdmin()) echo '<li><a href="admin.php">Admin</a></li>';
+                                            else{
+                                                $idUser=getId($conn);
                                                 echo '<li><a href="history.php">History</a></li>';
                                                 echo '<li><a href="profile.php?id='.$idUser.'">Profile</a></li>';
-                                            } 
+                                            }
                                             echo '<li><a href="logout.php">Logout</a></li>';
                                         }else {
                                             echo '<li><a href="login.php"><i class="fa fa-user" aria-hidden="true"></i> Login</a></li>';
@@ -79,7 +83,31 @@
     <div class="hamburger_menu_content text-right">
         <ul class="menu_top_nav">
             <li class="menu_item"><a href="index.php">Home</a></li>
-            <li class="menu_item"><a href="history.php">History</a></li>
+            <?php
+                if(isset($_COOKIE["SID"])) {
+                    // $sid = base64_decode(base64_decode($_COOKIE["SID"]));
+                    // $array = explode(';',$sid, 3);
+                    // $priv = $array[0];
+                    // $user = $array[1];
+                    // if($priv === "admin") echo '<li><a href="admin.php">Admin</a></li>';
+                    // else {
+                    //     $query = "SELECT idUser FROM user WHERE username = '$user' LIMIT 1";
+                    //     $result = $conn->query($query);
+                    //     if($result->rowCount() > 0){
+                    //         foreach($result as $row) {
+                    //             $idUser = $row['idUser'];             
+                    //         }
+                    //     }
+                    if(isAdmin()) echo '<li><a href="admin.php">Admin</a></li>';
+                    else{
+                        echo '<li><a href="history.php">History</a></li>';
+                        echo '<li><a href="profile.php?id='.$idUser.'">Profile</a></li>';
+                    }
+                    echo '<li><a href="logout.php">Logout</a></li>';
+                }else {
+                    echo '<li><a href="login.php"><i class="fa fa-user" aria-hidden="true"></i> Login</a></li>';
+                }
+            ?>
         </ul>
     </div>
 </div>

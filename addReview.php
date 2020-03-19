@@ -1,15 +1,20 @@
 <?php
-include 'connect_db.php';
-include 'functions.php';
+require_once 'connect_db.php';
+require_once 'functions.php';
 
 $idUser = getId($conn);
 
 if ($idUser != 0) {
-    $idProduct = $_POST['idProduct'];
     $message = $_POST['reviewerMessage'];
+    $idProduct = $_POST['idProduct'];
 
     $query = "INSERT INTO comment(idUser, idProduct, comment) VALUES ($idUser, $idProduct, '$message')";
     $result = $conn->query($query);
+    header("Location: $base_url/product_detail.php?idProduct=" . $idProduct);
+
+}
+else{
+    header("Location: $base_url/login.php");
 }
 
 // if(isset($_COOKIE['SID'])){
@@ -32,4 +37,3 @@ if ($idUser != 0) {
 //         }
 //     }
 // }
-header("location:product_detail.php?idProduct=" . $idProduct);

@@ -1,7 +1,7 @@
 <?php
 include "header.php";
-include "connect_db.php";
-include "functions.php"
+require_once "connect_db.php";
+require_once "functions.php";
 ?>
 
 <!-- Slider -->

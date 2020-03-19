@@ -1,7 +1,7 @@
 <?php
-include 'header.php';
-include 'connect_db.php';
-include "functions.php";
+include "header.php";
+require_once 'connect_db.php';
+require_once "functions.php";
 
 $idUser = getId($conn);
 $idProduct = $_GET['idProduct'];
@@ -142,6 +142,8 @@ foreach($balances as $row){
 									echo "</div>";
 									echo "</div>";
 								}
+							}else{
+								echo "No Review";
 							}
 
 							?>
