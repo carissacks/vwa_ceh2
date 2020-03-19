@@ -28,7 +28,7 @@ $resultReview = $conn->query($query);
 
 $sql = "SELECT user_balance FROM User WHERE idUser = $idUser LIMIT 1";
 $balances = $conn->query($sql);
-foreach($balances as $row){
+foreach ($balances as $row) {
 	$user_balance = $row["user_balance"];
 }
 
@@ -142,7 +142,7 @@ foreach($balances as $row){
 									echo "</div>";
 									echo "</div>";
 								}
-							}else{
+							} else {
 								echo "No Review";
 							}
 
@@ -196,7 +196,7 @@ foreach($balances as $row){
 				<div class="benefit_item d-flex flex-row align-items-center">
 					<div class="benefit_icon"><i class="fa fa-money" aria-hidden="true"></i></div>
 					<div class="benefit_content">
-						<h6>cach on delivery</h6>
+						<h6>cash on delivery</h6>
 						<p>The Internet Tend To Repeat</p>
 					</div>
 				</div>
@@ -215,7 +215,7 @@ foreach($balances as $row){
 					<div class="benefit_icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
 					<div class="benefit_content">
 						<h6>opening all week</h6>
-						<p>8AM - 09PM</p>
+						<p>8AM - 9PM</p>
 					</div>
 				</div>
 			</div>
