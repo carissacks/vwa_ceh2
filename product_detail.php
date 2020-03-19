@@ -28,7 +28,7 @@ $resultReview = $conn->query($query);
 
 $sql = "SELECT user_balance FROM User WHERE idUser = $idUser LIMIT 1";
 $balances = $conn->query($sql);
-foreach($balances as $row){
+foreach ($balances as $row) {
 	$user_balance = $row["user_balance"];
 }
 
@@ -142,7 +142,7 @@ foreach($balances as $row){
 									echo "</div>";
 									echo "</div>";
 								}
-							}else{
+							} else {
 								echo "No Review";
 							}
 
