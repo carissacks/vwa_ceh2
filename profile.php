@@ -9,7 +9,9 @@
             if($id == null){
                 header("Location: http://localhost/vwa_ceh2");
             }
-        } 
+        } else{
+            header("Location: http://localhost/vwa_ceh2");
+        }
     }else{
         header("Location: http://localhost/vwa_ceh2");
     }
