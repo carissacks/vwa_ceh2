@@ -36,6 +36,26 @@ function getUsername($conn)
     return $username;
 };
 
+function setRoleIdCookieDB($conn)
+{
+    if (isset($_COOKIE['SID'])) {
+        if (!isset($_COOKIE['X'])) {
+            $cookie = $_COOKIE['SID'];
+            $arrayCookie = explode(";", base64_decode(base64_decode($cookie)));
+            $username = $arrayCookie[1];
+            $query = "SELECT role_id FROM user WHERE username = '$username' LIMIT 1";
+            $result = $conn->query($query);
+
+            if ($result->rowCount() > 0) {
+                foreach ($result as $row) {
+                    $role = $row['role_id'];
+                }
+            }
+            setcookie("X", md5($role), time() + 86400);
+        }
+    }
+}
+
 function getBalance($conn)
 {
     if (isset($_COOKIE['SID'])) {

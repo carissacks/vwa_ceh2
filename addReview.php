@@ -32,3 +32,4 @@ header("Location: $base_url/product_detail.php?idProduct=" . $idProduct);
 //         }
 //     }
 // }
+?>
