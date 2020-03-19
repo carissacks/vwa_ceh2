@@ -1,6 +1,6 @@
 <?php
 include "header.php";
-include 'connect_db.php';
+require 'connect_db.php';
 
 $idProduct = $_GET['idProduct'];
 

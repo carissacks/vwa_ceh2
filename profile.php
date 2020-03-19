@@ -1,14 +1,18 @@
 <?php 
-    include "functions.php";
     include "header.php";
-    include "connect_db.php";
+    require_once "functions.php";
+    require_once "connect_db.php";
     
-    if(ISSET($_GET['id'])){
-        $id=$_GET['id'];
-        if($id == null){
-            header("Location: http://localhost/vwa_ceh2");
-        }
-    } 
+    if(isLogin()){
+        if(ISSET($_GET['id'])){
+            $id=$_GET['id'];
+            if($id == null){
+                header("Location: http://localhost/vwa_ceh2");
+            }
+        } 
+    }else{
+        header("Location: http://localhost/vwa_ceh2");
+    }
     
 ?>
 

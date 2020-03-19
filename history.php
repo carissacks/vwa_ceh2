@@ -1,13 +1,13 @@
 <?php 
-    include "functions.php";
-    include "connect_db.php";
     include "header.php";
+    require_once "functions.php";
+    require_once "connect_db.php";
 
-    $id= getId($conn);
-
-    if($id==0){
+    if(!isLogin()){
         header("Location: http://localhost/vwa_ceh2");
     }
+
+    $id= getId($conn);
 
     ?>
 
