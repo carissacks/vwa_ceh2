@@ -1,5 +1,11 @@
-<?php include "header.php" ?>
-<?php include "connect_db.php" ?>
+<?php include "header.php";
+require_once "connect_db.php";
+require_once "functions.php"; 
+
+if(!isAdmin()){
+    header("location:http://localhost/vwa_ceh2");   
+}?>
+
 
 <div class="container single_product_container">
     <h2>All History</h2>

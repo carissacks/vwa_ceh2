@@ -47,3 +47,20 @@
         }
         return $balance;
     };
+
+    function isAdmin(){
+        if(isset($_COOKIE['SID'])){
+            $cookie = $_COOKIE['SID'];
+            $arrayCookie = explode(";",base64_decode(base64_decode($cookie)));
+            $priv = $arrayCookie[0];
+            if($priv=="admin") return true;
+        }
+        return false;
+    };
+
+    function isLogin(){
+        if(isset($_COOKIE['SID'])){
+            return true;
+        }
+        return false;
+    }
