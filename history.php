@@ -17,7 +17,7 @@
         <div class="col-7">
             <?php
                         
-                $sql = "SELECT idHistory, p.product_name FROM history h 
+                $sql = "SELECT idHistory, p.product_name, shipping_address FROM history h 
                 JOIN product p ON h.idProduct = p.idProduct 
                 WHERE idUser = $id";
                 $result = $conn->query($sql);
@@ -27,11 +27,12 @@
                 echo "<tr>
                 <th>No. </th>
                 <th>Product</th>
+                <th>Shipping Address</th>
                 </tr>";
                 // output data of each row
                 $count = 1;
                 foreach($result as $row) {
-                    echo "<tr><td>" . $count++ . "</td><td>" . $row["product_name"]. "</td></tr>";
+                    echo "<tr><td>" . $count++ . "</td><td>" . $row["product_name"]. "</td><td>" . $row["shipping_address"]. "</td></tr>";
                 }
             } else {
                 echo '<div class="card">';

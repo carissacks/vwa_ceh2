@@ -43,7 +43,8 @@ CREATE TABLE `comment` (
 CREATE TABLE `history` (
   `idHistory` int(11) NOT NULL,
   `idUser` int(11) DEFAULT NULL,
-  `idProduct` int(11) DEFAULT NULL
+  `idProduct` int(11) DEFAULT NULL,
+  `shipping_address` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -72,7 +73,8 @@ CREATE TABLE `user` (
   `full_name` varchar(100) DEFAULT NULL,
   `pass` varchar(100) DEFAULT NULL,
   `role_id` varchar(50) DEFAULT NULL,
-  `user_balance` int(11) DEFAULT NULL
+  `user_balance` int(11) DEFAULT NULL,
+  `credit_card` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
