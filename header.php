@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
     <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
-	<link rel="stylesheet" type="text/css" href="plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="styles/responsive.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -40,32 +40,32 @@
                                 <ul class="navbar_menu">
                                     <li><a href="index.php">Home</a></li>
                                     <?php
-                                        require_once "connect_db.php";
-                                        require_once "functions.php";
-                                        if(isset($_COOKIE["SID"])) {
-                                            // $sid = base64_decode(base64_decode($_COOKIE["SID"]));
-                                            // $array = explode(';',$sid, 3);
-                                            // $priv = $array[0];
-                                            // $user = $array[1];
-                                            // if($priv === "admin") echo '<li><a href="admin.php">Admin</a></li>';
-                                            // else {
-                                            //     $query = "SELECT idUser FROM user WHERE username = '$user' LIMIT 1";
-                                            //     $result = $conn->query($query);
-                                            //     if($result->rowCount() > 0){
-                                            //         foreach($result as $row) {
-                                            //             $idUser = $row['idUser'];             
-                                            //         }
-                                            //     }
-                                            if(isAdmin()) echo '<li><a href="admin.php">Admin</a></li>';
-                                            else{
-                                                $idUser=getId($conn);
-                                                echo '<li><a href="history.php">History</a></li>';
-                                                echo '<li><a href="profile.php?id='.$idUser.'">Profile</a></li>';
-                                            }
-                                            echo '<li><a href="logout.php">Logout</a></li>';
-                                        }else {
-                                            echo '<li><a href="login.php"><i class="fa fa-user" aria-hidden="true"></i> Login</a></li>';
+                                    require_once "connect_db.php";
+                                    require_once "functions.php";
+                                    if (isset($_COOKIE["SID"])) {
+                                        // $sid = base64_decode(base64_decode($_COOKIE["SID"]));
+                                        // $array = explode(';',$sid, 3);
+                                        // $priv = $array[0];
+                                        // $user = $array[1];
+                                        // if($priv === "admin") echo '<li><a href="admin.php">Admin</a></li>';
+                                        // else {
+                                        //     $query = "SELECT idUser FROM user WHERE username = '$user' LIMIT 1";
+                                        //     $result = $conn->query($query);
+                                        //     if($result->rowCount() > 0){
+                                        //         foreach($result as $row) {
+                                        //             $idUser = $row['idUser'];             
+                                        //         }
+                                        //     }
+                                        if (isAdmin()) echo '<li><a href="admin.php">Admin</a></li>';
+                                        else {
+                                            $idUser = getId($conn);
+                                            echo '<li><a href="history.php">History</a></li>';
+                                            echo '<li><a href="profile.php?id=' . $idUser . '">Profile</a></li>';
                                         }
+                                        echo '<li><a href="logout.php">Logout</a></li>';
+                                    } else {
+                                        echo '<li><a href="login.php"><i class="fa fa-user" aria-hidden="true"></i> Login</a></li>';
+                                    }
                                     ?>
                                 </ul>
                                 <div class="hamburger_container">
@@ -78,36 +78,36 @@
             </div>
         </header>
 
-<div class="hamburger_menu">
-    <div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
-    <div class="hamburger_menu_content text-right">
-        <ul class="menu_top_nav">
-            <li class="menu_item"><a href="index.php">Home</a></li>
-            <?php
-                if(isset($_COOKIE["SID"])) {
-                    // $sid = base64_decode(base64_decode($_COOKIE["SID"]));
-                    // $array = explode(';',$sid, 3);
-                    // $priv = $array[0];
-                    // $user = $array[1];
-                    // if($priv === "admin") echo '<li><a href="admin.php">Admin</a></li>';
-                    // else {
-                    //     $query = "SELECT idUser FROM user WHERE username = '$user' LIMIT 1";
-                    //     $result = $conn->query($query);
-                    //     if($result->rowCount() > 0){
-                    //         foreach($result as $row) {
-                    //             $idUser = $row['idUser'];             
-                    //         }
-                    //     }
-                    if(isAdmin()) echo '<li><a href="admin.php">Admin</a></li>';
-                    else{
-                        echo '<li><a href="history.php">History</a></li>';
-                        echo '<li><a href="profile.php?id='.$idUser.'">Profile</a></li>';
+        <div class="hamburger_menu">
+            <div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+            <div class="hamburger_menu_content text-right">
+                <ul class="menu_top_nav">
+                    <li class="menu_item"><a href="index.php">Home</a></li>
+                    <?php
+                    if (isset($_COOKIE["SID"])) {
+                        // $sid = base64_decode(base64_decode($_COOKIE["SID"]));
+                        // $array = explode(';',$sid, 3);
+                        // $priv = $array[0];
+                        // $user = $array[1];
+                        // if($priv === "admin") echo '<li><a href="admin.php">Admin</a></li>';
+                        // else {
+                        //     $query = "SELECT idUser FROM user WHERE username = '$user' LIMIT 1";
+                        //     $result = $conn->query($query);
+                        //     if($result->rowCount() > 0){
+                        //         foreach($result as $row) {
+                        //             $idUser = $row['idUser'];             
+                        //         }
+                        //     }
+                        if (isAdmin()) echo '<li><a href="admin.php">Admin</a></li>';
+                        else {
+                            echo '<li><a href="history.php">History</a></li>';
+                            echo '<li><a href="profile.php?id=' . $idUser . '">Profile</a></li>';
+                        }
+                        echo '<li><a href="logout.php">Logout</a></li>';
+                    } else {
+                        echo '<li><a href="login.php"><i class="fa fa-user" aria-hidden="true"></i> Login</a></li>';
                     }
-                    echo '<li><a href="logout.php">Logout</a></li>';
-                }else {
-                    echo '<li><a href="login.php"><i class="fa fa-user" aria-hidden="true"></i> Login</a></li>';
-                }
-            ?>
-        </ul>
-    </div>
-</div>
+                    ?>
+                </ul>
+            </div>
+        </div>

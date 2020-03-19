@@ -1,27 +1,22 @@
-<?php 
-    include "header.php";
-    require_once "functions.php";
-    require_once "connect_db.php";
+<?php
+include "header.php";
+require_once "functions.php";
+require_once "connect_db.php";
 
-    if(!isLogin()){
-        // header("Location: http://localhost/vwa_ceh2");
-        header("Location: $base_url");
-    }
+$id = getId($conn);
 
-    $id= getId($conn);
-
-    ?>
+?>
 
 <div class="container single_product_container" id="history">
     <h2 class="text-center my-3">History</h2>
     <div class="row justify-content-center">
         <div class="col-7">
             <?php
-                        
-                $sql = "SELECT idHistory, p.product_name, shipping_address FROM history h 
+
+            $sql = "SELECT idHistory, p.product_name, shipping_address FROM history h 
                 JOIN product p ON h.idProduct = p.idProduct 
                 WHERE idUser = $id";
-                $result = $conn->query($sql);
+            $result = $conn->query($sql);
 
             if ($result->rowCount() > 0) {
                 echo '<table class="table">';
@@ -32,8 +27,8 @@
                 </tr>";
                 // output data of each row
                 $count = 1;
-                foreach($result as $row) {
-                    echo "<tr><td>" . $count++ . "</td><td>" . $row["product_name"]. "</td><td>" . $row["shipping_address"]. "</td></tr>";
+                foreach ($result as $row) {
+                    echo "<tr><td>" . $count++ . "</td><td>" . $row["product_name"] . "</td><td>" . $row["shipping_address"] . "</td></tr>";
                 }
             } else {
                 echo '<div class="card">';
