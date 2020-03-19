@@ -13,6 +13,7 @@ if (isset($_POST)) {
     }
     else{
         setRoleIdCookieDB($conn);
+        header("Location: $base_url/admin.php");
     }
 }
 else header("Location: $base_url/admin.php");

@@ -32,7 +32,7 @@
             $query2 = "UPDATE User SET credit_card = '$card_num' WHERE idUser = $idUser";
             $result2 = $conn->query($query2);
             if ($result == TRUE && $result2 == TRUE) {
-                header("Location: $base_url/history.php");
+                header("Location: ".$base_url."/history.php");
             }else{
                 header("Location: $base_url");
             }
@@ -46,7 +46,7 @@
             $query2 = "UPDATE User SET user_balance = '$last_balance' WHERE idUser = $idUser";
             $result2 = $conn->query($query2);
             if ($result == TRUE && $result2 == TRUE) {
-                header("Location :$base_url/history.php");
+                header("Location :".$base_url."/history.php");
             }else{
                 header("Location: $base_url");
             }
