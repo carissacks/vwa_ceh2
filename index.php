@@ -91,7 +91,7 @@ require_once "functions.php";
 								echo "<div class='red_button detail_button'><a href='product_detail.php?idProduct=$product[idProduct]'>See Details</a></div>";
 								echo "</div>";
 							}
-						} else echo "<p class='align-content-center'>No items found</p>";
+						} else echo "<p>No items found</p>";
 					}
 					?>
 					</p>
