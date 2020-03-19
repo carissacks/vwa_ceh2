@@ -43,8 +43,7 @@
                 }
             }
         }else{
-            $balance= 0;
+            $balance = 0;
         }
         return $balance;
     };
-?>

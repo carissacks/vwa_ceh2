@@ -69,7 +69,11 @@ include "functions.php"
 
 					if (isset($_POST['search_item'])) {
 						$search_item = $_POST['search_item'];
-						$query = "SELECT * FROM product WHERE product_name LIKE '%$search_item%'";
+						if (!preg_match('/(and|AND|And|null|NULL|Null|where|WHERE|Where|limit|LIMIT|Limit|union|UNION|Union|select|SELECT|Select)/', $search_item))
+							$query = "SELECT * FROM product WHERE product_name LIKE '%$search_item%'";
+						else {
+							$query = "SELECT * FROM product";
+						}
 					} else $query = "SELECT * FROM product";
 					if ($products = $conn->query($query)) {
 						if ($products->rowCount() > 0) {
