@@ -48,7 +48,7 @@ if(!isAdmin()){
                         <label for="idUser">Select user</label>
                         <select class="form-control text-dark" name="idUser" required>
                     <?php 
-                        $sql = "SELECT idUser, full_name FROM user";
+                        $sql = "SELECT idUser, full_name FROM user WHERE role_id='guest'";
                         $result = $conn->query($sql);
                         foreach($result as $row):
                             echo "<option value=".$row["idUser"].">" . $row["full_name"] . "</option>";
@@ -63,9 +63,9 @@ if(!isAdmin()){
                 </div>
                 <?php if(ISSET($_GET["status"])):
                     if($_GET["status"] == "success"):?>
-                    <div class="alert alert-danger col-10 col-md-8">User balance is updated.</div>
+                    <div class="alert alert-success col-10 col-md-8">User balance is updated.</div>
                 <?php else:?>
-                    <div class="alert alert-success col-10 col-md-8">Failed to update user balance.</div>
+                    <div class="alert alert-danger col-10 col-md-8">Failed to update user balance.</div>
                 <?php endif; endif;?>
                 <div class="row pl-2">
                     <button type="submit" class="btn btn-primary p-2 col-1">Proceed</button>
