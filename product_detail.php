@@ -104,8 +104,8 @@ $resultReview = $conn->query($query);
 				<div id="tab_1" class="tab_container active">
 					<div class="row justify-content-center">
 						<div class="col-10">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec facilisis ultricies justo, non vulputate ex feugiat porta. Nulla malesuada nisi in mi elementum, a congue urna congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer a aliquet ipsum. Praesent ut arcu non quam facilisis eleifend et ornare orci. Vivamus rhoncus diam at massa bibendum, ac condimentum diam vehicula. Aenean enim ipsum, venenatis vel porta quis, gravida a massa. Vivamus consequat lacinia sapien, vel tempor lorem mollis ac. Quisque feugiat commodo venenatis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non urna at felis hendrerit vehicula. Duis feugiat dapibus tempor.
-								Nullam dapibus in erat ac elementum. Morbi laoreet sapien quam, nec faucibus ligula commodo vitae. Praesent lacus augue, placerat et felis quis, rutrum vehicula sem. Sed sagittis vitae orci ac blandit. Nullam at felis luctus libero pharetra varius. Aenean vel nisl consequat, sodales tellus non, lacinia risus. Mauris scelerisque eros vel odio fermentum cursus. Mauris sit amet sollicitudin arcu. Cras rutrum lorem sollicitudin erat mattis malesuada. Maecenas posuere magna sed hendrerit pretium. Duis pellentesque est sodales risus condimentum luctus. In sit amet blandit nunc.
+							<p>
+							<?php echo $productDesc; ?>
 							</p>
 						</div>
 					</div>
