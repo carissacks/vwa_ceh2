@@ -1,5 +1,5 @@
 <?php
-include "header.php";
+include 'header.php';
 include 'connect_db.php';
 
 $idProduct = $_GET['idProduct'];
@@ -8,7 +8,7 @@ $query = "SELECT product_name, product_desc, product_image, product_price FROM p
 $result = $conn->query($query);
 
 if ($result->rowCount() > 0) {
-	foreach($result as $row) {
+	foreach ($result as $row) {
 		$productName = $row['product_name'];
 		$productDesc = $row['product_desc'];
 		$productImage = $row['product_image'];
@@ -21,7 +21,7 @@ if ($result->rowCount() > 0) {
 	$productPrice = "-";
 }
 
-$query = "SELECT User.full_name AS FullName, Review.comment AS ReviewerComment FROM comment AS Review INNER JOIN user AS User WHERE idProduct = $idProduct ";
+$query = "SELECT User.full_name AS FullName, Review.comment AS ReviewerComment FROM comment AS Review INNER JOIN user User ON User.idUser = Review.idUser WHERE idProduct = $idProduct";
 $resultReview = $conn->query($query);
 
 ?>
@@ -105,7 +105,7 @@ $resultReview = $conn->query($query);
 					<div class="row justify-content-center">
 						<div class="col-10">
 							<p>
-							<?php echo $productDesc; ?>
+								<?php echo $productDesc; ?>
 							</p>
 						</div>
 					</div>
@@ -126,7 +126,7 @@ $resultReview = $conn->query($query);
 							<!-- User Review -->
 							<?php
 							if ($resultReview->rowCount() > 0) {
-								while ($row = $resultReview->fetch_assoc()) {
+								while ($row = $resultReview->fetch()) {
 									echo "<div class='user_review_container d-flex flex-column flex-sm-row table-bordered'>";
 									echo "<div class='review'>";
 									echo "<div class='user_name mt-2'>$row[FullName]</div>";
@@ -213,9 +213,6 @@ $resultReview = $conn->query($query);
 	</div>
 </div>
 
-<!-- Footer -->
-<?php include "footer.php" ?>
-
 <div id="myModal" class="modal">
 
 	<div class="container-fluid">
@@ -256,8 +253,10 @@ $resultReview = $conn->query($query);
 			</div>``
 		</div>
 	</div>
-
 </div>
+
+<!-- Footer -->
+<?php include "footer.php" ?>
 
 <script>
 	$(document).ready(function() {
@@ -291,7 +290,3 @@ $resultReview = $conn->query($query);
 		});
 	});
 </script>
-
-</body>
-
-</html>

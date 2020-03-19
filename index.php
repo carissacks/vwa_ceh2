@@ -114,7 +114,7 @@ include "functions.php"
 					<div class="benefit_item d-flex flex-row align-items-center">
 						<div class="benefit_icon"><i class="fa fa-money" aria-hidden="true"></i></div>
 						<div class="benefit_content">
-							<h6>cach on delivery</h6>
+							<h6>cash on delivery</h6>
 							<p>The Internet Tend To Repeat</p>
 						</div>
 					</div>
@@ -133,7 +133,7 @@ include "functions.php"
 						<div class="benefit_icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
 						<div class="benefit_content">
 							<h6>opening all week</h6>
-							<p>8AM - 09PM</p>
+							<p>8AM - 9PM</p>
 						</div>
 					</div>
 				</div>
@@ -141,4 +141,4 @@ include "functions.php"
 		</div>
 	</div>
 
-<?php include "footer.php" ?>
+	<?php include "footer.php" ?>
