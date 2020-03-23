@@ -82,6 +82,9 @@ foreach ($balances as $row) {
 				</ul>
 				<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
 					<div id="buyItem" class="red_button add_to_cart_button" style="color: white">Buy Item</div>
+					<div id="wishlistItem" class="btn add_to_cart_button" style="color: red">
+						<a href="wishlist_form.php?id=<?php echo $idProduct; ?>">add to Wishlist</a>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -48,6 +48,13 @@
                     echo "</table>";
                 }
             } 
+
+            if(ISSET($_GET['req'])){
+                $url=$_GET['req'] . ".php";
+                include $url;
+            }else {
+                echo '<a href="profile.php?id='.$id.'&&req=wishlist" class="btn btn-block btn-primary">Show Wishlist</a>';
+            }
             ?>
         </div>
     </div>
